@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Burnable.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
 
 abstract contract Collection is ERC1155, ERC1155Burnable, AccessControl {
-    bytes32 public constant WORKSHOP_ROLE = keccak256("WORKSHOP");
+    bytes32 public constant WORKBENCH_ROLE = keccak256("WORKBENCH");
 
     constructor() ERC1155("") {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
@@ -14,7 +14,7 @@ abstract contract Collection is ERC1155, ERC1155Burnable, AccessControl {
 
     modifier onlyMinter() {
         require(
-            hasRole(WORKSHOP_ROLE, msg.sender) ||
+            hasRole(WORKBENCH_ROLE, msg.sender) ||
                 hasRole(DEFAULT_ADMIN_ROLE, msg.sender),
             "Not authorized as a minter"
         );

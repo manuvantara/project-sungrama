@@ -2,16 +2,16 @@
 pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "./IWorkshop.sol";
+import "./IWorkbench.sol";
 import "./Collection.sol";
 
-abstract contract Workshop is Ownable, IWorkshop {
+abstract contract Workbench is Ownable, IWorkbench {
     /**
      * @dev Token collection. The collection should inherit from ERC1155Burnable
-     * and register Workshop as a minter
+     * and register Workbench as a minter
      */
     Collection public immutable collection;
-    mapping(uint256 => Recipe) private _recipes;
+    mapping(uint256 => Blueprint) private _blueprints;
 
     /**
      * @dev Sets the token collection.
@@ -21,14 +21,14 @@ abstract contract Workshop is Ownable, IWorkshop {
     }
 
     /**
-     * @dev See IWorkshop
+     * @dev See IWorkbench
      */
-    function hashRecipe(
+    function hashBlueprint(
         uint256[] calldata inputIds,
         uint256[] calldata inputAmounts,
         uint256[] calldata outputIds,
         uint256[] calldata outputAmounts
-    ) public pure virtual override returns (uint256 recipeId) {
+    ) public pure virtual override returns (uint256 blueprintId) {
         return
             uint256(
                 keccak256(
@@ -58,21 +58,21 @@ abstract contract Workshop is Ownable, IWorkshop {
     }
 
     /**
-     * @dev See IWorkshop
+     * @dev See IWorkbench
      */
-    function createRecipe(
+    function createBlueprint(
         uint256[] calldata inputIds,
         uint256[] calldata inputAmounts,
         uint256[] calldata outputIds,
         uint256[] calldata outputAmounts
-    ) external virtual override onlyOwner returns (uint256 newRecipeId) {
+    ) external virtual override onlyOwner returns (uint256 newBlueprintId) {
         if (
             inputIds.length != inputAmounts.length ||
             outputIds.length != outputAmounts.length ||
             inputIds.length == 0 ||
             outputIds.length == 0
         )
-            revert InvalidRecipeLength(
+            revert InvalidBlueprintLength(
                 inputIds.length,
                 inputAmounts.length,
                 outputIds.length,
@@ -80,45 +80,43 @@ abstract contract Workshop is Ownable, IWorkshop {
             );
         _validateAmounts(inputAmounts, outputAmounts);
 
-        newRecipeId = hashRecipe(
+        newBlueprintId = hashBlueprint(
             inputIds,
             inputAmounts,
             outputIds,
             outputAmounts
         );
-        if (_recipes[newRecipeId].outputIds.length != 0) {
-            revert RecipeAlreadyExists(newRecipeId);
+        if (_blueprints[newBlueprintId].outputIds.length != 0) {
+            revert BlueprintAlreadyExists(newBlueprintId);
         }
-        _recipes[newRecipeId] = Recipe({
+        _blueprints[newBlueprintId] = Blueprint({
             inputIds: inputIds,
             inputAmounts: inputAmounts,
             outputIds: outputIds,
             outputAmounts: outputAmounts
         });
-        emit RecipeCreated(newRecipeId);
-
-        return newRecipeId;
+        emit BlueprintCreated(newBlueprintId);
     }
 
     /**
-     * @dev Modifier to check if a recipe with the given ID exists
+     * @dev Modifier to check if a blueprint with the given ID exists
      * before function execution.
      */
-    modifier recipeExists(uint256 recipeId) {
-        if (_recipes[recipeId].outputIds.length == 0) {
-            revert RecipeNotFound(recipeId);
+    modifier blueprintExists(uint256 blueprintId) {
+        if (_blueprints[blueprintId].outputIds.length == 0) {
+            revert BlueprintNotFound(blueprintId);
         }
         _;
     }
 
     /**
-     * @dev See IWorkshop
+     * @dev See IWorkbench
      */
-    function deleteRecipe(
-        uint256 recipeId
-    ) external virtual override onlyOwner recipeExists(recipeId) {
-        delete _recipes[recipeId];
-        emit RecipeDeleted(recipeId);
+    function deleteBlueprint(
+        uint256 blueprintId
+    ) external virtual override onlyOwner blueprintExists(blueprintId) {
+        delete _blueprints[blueprintId];
+        emit BlueprintDeleted(blueprintId);
     }
 
     /**
@@ -137,21 +135,34 @@ abstract contract Workshop is Ownable, IWorkshop {
     }
 
     /**
-     * @dev See IWorkshop
+     * @dev See IWorkbench
      */
-    function craft(uint256 recipeId) external recipeExists(recipeId) {
+    function craft(uint256 blueprintId) external blueprintExists(blueprintId) {
         address account = msg.sender;
-        Recipe storage recipe = _recipes[recipeId];
+        Blueprint storage blueprint = _blueprints[blueprintId];
 
-        _checkTokenBalances(account, recipe.inputIds, recipe.inputAmounts);
+        _checkTokenBalances(
+            account,
+            blueprint.inputIds,
+            blueprint.inputAmounts
+        );
 
-        collection.burnBatch(account, recipe.inputIds, recipe.inputAmounts);
+        collection.burnBatch(
+            account,
+            blueprint.inputIds,
+            blueprint.inputAmounts
+        );
         collection.mintBatch(
             account,
-            recipe.outputIds,
-            recipe.outputAmounts,
+            blueprint.outputIds,
+            blueprint.outputAmounts,
             "0x"
         );
-        emit Crafted(recipeId, account, recipe.outputIds, recipe.outputAmounts);
+        emit Crafted(
+            blueprintId,
+            account,
+            blueprint.outputIds,
+            blueprint.outputAmounts
+        );
     }
 }

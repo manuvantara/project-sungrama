@@ -4,12 +4,12 @@ import { ethers } from "hardhat";
 
 describe("Collection", function () {
   async function deployCollectionFixture() {
-    const [owner, workshop, ...otherAccounts] = await ethers.getSigners();
+    const [owner, workbench, ...otherAccounts] = await ethers.getSigners();
 
     const Collection = await ethers.getContractFactory("MyCollection");
     const collection = await Collection.deploy();
 
-    return { collection, workshop, owner, otherAccounts };
+    return { collection, workbench, owner, otherAccounts };
   }
 
   describe("Deployment", function () {
@@ -23,16 +23,16 @@ describe("Collection", function () {
     });
   });
 
-  describe("Minting", function () {
-    it("should grant the WORKSHOP_ROLE to the workshop", async function () {
-      const { collection, workshop } = await loadFixture(
+  describe("Minting Access", function () {
+    it("should grant the WORKBENCH_ROLE to the workbench", async function () {
+      const { collection, workbench } = await loadFixture(
         deployCollectionFixture
       );
 
-      const WORKSHOP_ROLE = await collection.WORKSHOP_ROLE();
-      await collection.grantRole(WORKSHOP_ROLE, workshop.address);
+      const WORKBENCH_ROLE = await collection.WORKBENCH_ROLE();
+      await collection.grantRole(WORKBENCH_ROLE, workbench.address);
 
-      expect(await collection.hasRole(WORKSHOP_ROLE, workshop.address)).to.be
+      expect(await collection.hasRole(WORKBENCH_ROLE, workbench.address)).to.be
         .true;
     });
 
@@ -49,21 +49,21 @@ describe("Collection", function () {
       ).to.be.reverted;
     });
 
-    it("should allow onlyMinter (admin or workshop) to mint tokens", async function () {
-      const { collection, workshop, owner, otherAccounts } = await loadFixture(
+    it("should allow onlyMinter (admin or workbench) to mint tokens", async function () {
+      const { collection, workbench, owner } = await loadFixture(
         deployCollectionFixture
       );
 
-      const WORKSHOP_ROLE = await collection.WORKSHOP_ROLE();
-      await collection.grantRole(WORKSHOP_ROLE, workshop.address);
+      const WORKBENCH_ROLE = await collection.WORKBENCH_ROLE();
+      await collection.grantRole(WORKBENCH_ROLE, workbench.address);
 
       // Try to mint from owner account
       await expect(collection.mint(owner.address, 1, 1, "0x")).to.not.be
         .reverted;
 
-      // Try to mint from workshop
+      // Try to mint from workbench
       await expect(
-        collection.connect(workshop).mint(workshop.address, 1, 1, "0x")
+        collection.connect(workbench).mint(workbench.address, 1, 1, "0x")
       ).to.not.be.reverted;
     });
   });

@@ -2,28 +2,28 @@ import { loadFixture } from "@nomicfoundation/hardhat-network-helpers";
 import { expect } from "chai";
 import { ethers } from "hardhat";
 
-describe("Workshop", function () {
+describe("Workbench", function () {
   const COLLECTION_ADDRESS = "0xd9145CCE52D386f254917e481eB44e9943F39138";
 
-  async function deployWorkshopFixture() {
+  async function deployWorkbenchFixture() {
     const [owner, ...otherAccounts] = await ethers.getSigners();
 
-    const Workshop = await ethers.getContractFactory("MyWorkshop");
-    const workshop = await Workshop.deploy(COLLECTION_ADDRESS);
+    const Workbench = await ethers.getContractFactory("MyWorkbench");
+    const workbench = await Workbench.deploy(COLLECTION_ADDRESS);
 
-    return { workshop, owner, otherAccounts };
+    return { workbench, owner, otherAccounts };
   }
 
   describe("Deployment", function () {
     it("should set a collection address", async function () {
-      const { workshop } = await loadFixture(deployWorkshopFixture);
+      const { workbench } = await loadFixture(deployWorkbenchFixture);
 
-      expect(workshop.collection).not.to.equal(COLLECTION_ADDRESS);
+      expect(workbench.collection).not.to.equal(COLLECTION_ADDRESS);
     });
   });
 
-  const NON_EXISTING_RECIPE_ID = 12345n;
-  const TEST_RECIPES = {
+  const NON_EXISTING_BLUEPRINT_ID = 12345n;
+  const BLUEPRINTS = {
     empty: [
       {
         inputIds: [],
@@ -92,13 +92,13 @@ describe("Workshop", function () {
     ],
   };
 
-  describe("Hash Crafting Recipe Function", function () {
-    it("should hash the recipe correctly", async function () {
-      const { workshop } = await loadFixture(deployWorkshopFixture);
+  describe("Hash Blueprint Function", function () {
+    it("should hash the blueprint correctly", async function () {
+      const { workbench } = await loadFixture(deployWorkbenchFixture);
       const { inputIds, inputAmounts, outputIds, outputAmounts } =
-        TEST_RECIPES.valid;
+        BLUEPRINTS.valid;
 
-      const expectedRecipeId = ethers.BigNumber.from(
+      const expectedBlueprintId = ethers.BigNumber.from(
         ethers.utils.keccak256(
           ethers.utils.defaultAbiCoder.encode(
             ["uint256[]", "uint256[]", "uint256[]", "uint256[]"],
@@ -106,32 +106,32 @@ describe("Workshop", function () {
           )
         )
       );
-      const actualRecipeId = await workshop.hashRecipe(
+      const actualBlueprintId = await workbench.hashBlueprint(
         inputIds,
         inputAmounts,
         outputIds,
         outputAmounts
       );
 
-      expect(actualRecipeId).to.equal(expectedRecipeId);
+      expect(actualBlueprintId).to.equal(expectedBlueprintId);
     });
   });
 
-  describe("Create Crafting Recipe Function", function () {
+  describe("Create Blueprint Function", function () {
     it("should revert in case of empty array as a parameter", async function () {
-      const { workshop } = await loadFixture(deployWorkshopFixture);
+      const { workbench } = await loadFixture(deployWorkbenchFixture);
 
-      for (const scenario of TEST_RECIPES.empty) {
+      for (const scenario of BLUEPRINTS.empty) {
         const { inputIds, inputAmounts, outputIds, outputAmounts } = scenario;
         await expect(
-          workshop.createRecipe(
+          workbench.createBlueprint(
             inputIds,
             inputAmounts,
             outputIds,
             outputAmounts
           )
         )
-          .to.be.revertedWithCustomError(workshop, "InvalidRecipeLength")
+          .to.be.revertedWithCustomError(workbench, "InvalidBlueprintLength")
           .withArgs(
             inputIds.length,
             inputAmounts.length,
@@ -142,19 +142,19 @@ describe("Workshop", function () {
     });
 
     it("should revert if there is a mismatch between the ids and amounts length", async function () {
-      const { workshop } = await loadFixture(deployWorkshopFixture);
+      const { workbench } = await loadFixture(deployWorkbenchFixture);
 
-      for (const scenario of TEST_RECIPES.mismatch) {
+      for (const scenario of BLUEPRINTS.mismatch) {
         const { inputIds, inputAmounts, outputIds, outputAmounts } = scenario;
         await expect(
-          workshop.createRecipe(
+          workbench.createBlueprint(
             inputIds,
             inputAmounts,
             outputIds,
             outputAmounts
           )
         )
-          .to.be.revertedWithCustomError(workshop, "InvalidRecipeLength")
+          .to.be.revertedWithCustomError(workbench, "InvalidBlueprintLength")
           .withArgs(
             inputIds.length,
             inputAmounts.length,
@@ -165,29 +165,29 @@ describe("Workshop", function () {
     });
 
     it("should revert if input or output amount is zero", async function () {
-      const { workshop } = await loadFixture(deployWorkshopFixture);
+      const { workbench } = await loadFixture(deployWorkbenchFixture);
 
-      for (const scenario of TEST_RECIPES.zeroAmount) {
+      for (const scenario of BLUEPRINTS.zeroAmount) {
         const { inputIds, inputAmounts, outputIds, outputAmounts } = scenario;
         await expect(
-          workshop.createRecipe(
+          workbench.createBlueprint(
             inputIds,
             inputAmounts,
             outputIds,
             outputAmounts
           )
         )
-          .to.be.revertedWithCustomError(workshop, "InvalidAmount")
+          .to.be.revertedWithCustomError(workbench, "InvalidAmount")
           .withArgs(0);
       }
     });
 
-    it("should create a new recipe with valid parameters", async function () {
-      const { workshop } = await loadFixture(deployWorkshopFixture);
+    it("should create a new blueprint with valid parameters", async function () {
+      const { workbench } = await loadFixture(deployWorkbenchFixture);
       const { inputIds, inputAmounts, outputIds, outputAmounts } =
-        TEST_RECIPES.valid;
+        BLUEPRINTS.valid;
 
-      const expectedRecipeId = await workshop.hashRecipe(
+      const expectedBlueprintId = await workbench.hashBlueprint(
         inputIds,
         inputAmounts,
         outputIds,
@@ -195,81 +195,87 @@ describe("Workshop", function () {
       );
 
       await expect(
-        workshop.createRecipe(inputIds, inputAmounts, outputIds, outputAmounts)
+        workbench.createBlueprint(
+          inputIds,
+          inputAmounts,
+          outputIds,
+          outputAmounts
+        )
       )
-        .to.emit(workshop, "RecipeCreated")
-        .withArgs(expectedRecipeId);
+        .to.emit(workbench, "BlueprintCreated")
+        .withArgs(expectedBlueprintId);
     });
   });
 
-  describe("Delete Crafting Recipe Function", function () {
-    it("should revert if trying to delete a non-existing recipe", async function () {
-      const { workshop } = await loadFixture(deployWorkshopFixture);
+  describe("Delete Blueprint Function", function () {
+    it("should revert if trying to delete a non-existing blueprint", async function () {
+      const { workbench } = await loadFixture(deployWorkbenchFixture);
 
-      await expect(workshop.deleteRecipe(NON_EXISTING_RECIPE_ID))
-        .to.be.revertedWithCustomError(workshop, "RecipeNotFound")
-        .withArgs(NON_EXISTING_RECIPE_ID);
+      await expect(workbench.deleteBlueprint(NON_EXISTING_BLUEPRINT_ID))
+        .to.be.revertedWithCustomError(workbench, "BlueprintNotFound")
+        .withArgs(NON_EXISTING_BLUEPRINT_ID);
     });
 
-    it("should revert if non-owner tries to delete a recipe", async function () {
-      const { workshop, otherAccounts } = await loadFixture(
-        deployWorkshopFixture
+    it("should revert if non-owner tries to delete a blueprint", async function () {
+      const { workbench, otherAccounts } = await loadFixture(
+        deployWorkbenchFixture
       );
       const { inputIds, inputAmounts, outputIds, outputAmounts } =
-        TEST_RECIPES.valid;
+        BLUEPRINTS.valid;
 
-      const recipeId = await workshop.hashRecipe(
+      const blueprintId = await workbench.hashBlueprint(
         inputIds,
         inputAmounts,
         outputIds,
         outputAmounts
       );
-      await workshop.createRecipe(
+      await workbench.createBlueprint(
         inputIds,
         inputAmounts,
         outputIds,
         outputAmounts
       );
 
-      await expect(workshop.connect(otherAccounts[0]).deleteRecipe(recipeId)).to
-        .be.reverted;
+      await expect(
+        workbench.connect(otherAccounts[0]).deleteBlueprint(blueprintId)
+      ).to.be.reverted;
     });
 
-    it("should allow owner to delete the existing recipe", async function () {
-      const { workshop } = await loadFixture(deployWorkshopFixture);
+    it("should allow owner to delete the existing blueprint", async function () {
+      const { workbench } = await loadFixture(deployWorkbenchFixture);
       const { inputIds, inputAmounts, outputIds, outputAmounts } =
-        TEST_RECIPES.valid;
+        BLUEPRINTS.valid;
 
-      const recipeId = await workshop.hashRecipe(
+      const blueprintId = await workbench.hashBlueprint(
         inputIds,
         inputAmounts,
         outputIds,
         outputAmounts
       );
-      await workshop.createRecipe(
+      await workbench.createBlueprint(
         inputIds,
         inputAmounts,
         outputIds,
         outputAmounts
       );
 
-      await expect(workshop.deleteRecipe(recipeId))
-        .to.emit(workshop, "RecipeDeleted")
-        .withArgs(recipeId);
+      await expect(workbench.deleteBlueprint(blueprintId))
+        .to.emit(workbench, "BlueprintDeleted")
+        .withArgs(blueprintId);
     });
   });
 
   describe("Craft Function", function () {
-    it("should revert if trying to craft with a non-existing recipe", async function () {
-      const { workshop, otherAccounts } = await loadFixture(
-        deployWorkshopFixture
+    it("should revert if trying to craft with a non-existing blueprint", async function () {
+      const { workbench, otherAccounts } = await loadFixture(
+        deployWorkbenchFixture
       );
 
       await expect(
-        workshop.connect(otherAccounts[0]).craft(NON_EXISTING_RECIPE_ID)
+        workbench.connect(otherAccounts[0]).craft(NON_EXISTING_BLUEPRINT_ID)
       )
-        .to.be.revertedWithCustomError(workshop, "RecipeNotFound")
-        .withArgs(NON_EXISTING_RECIPE_ID);
+        .to.be.revertedWithCustomError(workbench, "BlueprintNotFound")
+        .withArgs(NON_EXISTING_BLUEPRINT_ID);
     });
   });
 });

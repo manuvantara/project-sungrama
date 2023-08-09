@@ -1,19 +1,17 @@
 import { ethers } from "hardhat";
 
 async function main() {
-
-
   const Collection = await ethers.getContractFactory("MyCollection");
   const collection = await Collection.deploy();
   await collection.deployed();
 
-  const Workshop = await ethers.getContractFactory("MyWorkshop");
-  const workshop = await Workshop.deploy(collection.address);
-  await workshop.deployed();
+  const Workbench = await ethers.getContractFactory("MyWorkbench");
+  const workbench = await Workbench.deploy(collection.address);
+  await workbench.deployed();
 
   console.log(
     `Collection deployed to ${collection.address}. 
-    Workshop deployed to ${workshop.address}.`
+    Workbench deployed to ${workbench.address}.`
   );
 }
 

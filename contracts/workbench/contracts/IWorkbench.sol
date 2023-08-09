@@ -2,13 +2,13 @@
 pragma solidity ^0.8.9;
 
 /**
- * @dev Interface of the Workshop.
+ * @dev Interface of the Workbench.
  */
-interface IWorkshop {
+interface IWorkbench {
     /**
-     * @dev Crafting recipe structure.
+     * @dev Crafting blueprint structure.
      */
-    struct Recipe {
+    struct Blueprint {
         uint256[] inputIds;
         uint256[] inputAmounts;
         uint256[] outputIds;
@@ -16,9 +16,9 @@ interface IWorkshop {
     }
 
     /**
-     * @dev Empty array or a mismatch between the ids and amounts length for a create recipe call.
+     * @dev Empty array or a mismatch between the ids and amounts length for a create blueprint call.
      */
-    error InvalidRecipeLength(
+    error InvalidBlueprintLength(
         uint256 inputIdsLength,
         uint256 inputAmountsLength,
         uint256 outputIdsLength,
@@ -26,14 +26,14 @@ interface IWorkshop {
     );
 
     /**
-     * @dev The `recipeId` already exist.
+     * @dev The `blueprintId` already exist.
      */
-    error RecipeAlreadyExists(uint256 recipeId);
+    error BlueprintAlreadyExists(uint256 blueprintId);
 
     /**
-     * @dev The `recipeId` does not exist.
+     * @dev The `blueprintId` does not exist.
      */
-    error RecipeNotFound(uint256 recipeId);
+    error BlueprintNotFound(uint256 blueprintId);
 
     /**
      * @dev The amount was set to invalid value i.e. zero.
@@ -51,53 +51,53 @@ interface IWorkshop {
     error InsufficientBalance();
 
     /**
-     * @dev Emitted when a recipe is created.
+     * @dev Emitted when a blueprint is created.
      */
-    event RecipeCreated(uint256 recipeId);
+    event BlueprintCreated(uint256 blueprintId);
 
     /**
-     * @dev Emitted when the recipe is deleted.
+     * @dev Emitted when the blueprint is deleted.
      */
-    event RecipeDeleted(uint256 recipeId);
+    event BlueprintDeleted(uint256 blueprintId);
 
     /**
      * @dev Emitted when a craft action is executed
      */
     event Crafted(
-        uint256 recipeId,
+        uint256 blueprintId,
         address account,
         uint256[] outputIds,
         uint256[] outputAmounts
     );
 
     /**
-     * @dev Hashing function used to (re)build the recipe id from its details.
+     * @dev Hashing function used to (re)build the blueprint id from its details.
      */
-    function hashRecipe(
+    function hashBlueprint(
         uint256[] calldata inputIds,
         uint256[] calldata inputAmounts,
         uint256[] calldata outputIds,
         uint256[] calldata outputAmounts
-    ) external pure returns (uint256 recipeId);
+    ) external pure returns (uint256 blueprintId);
 
     /**
-     * @dev Function to create a new crafting recipe.
+     * @dev Function to create a new blueprint.
      */
-    function createRecipe(
+    function createBlueprint(
         uint256[] calldata inputIds,
         uint256[] calldata inputAmounts,
         uint256[] calldata outputIds,
         uint256[] calldata outputAmounts
-    ) external returns (uint256 newRecipeId);
+    ) external returns (uint256 newBlueprintId);
 
     /**
-     * @dev Function to delete a crafting recipe.
+     * @dev Function to delete a blueprint.
      */
-    function deleteRecipe(uint256 recipeId) external;
+    function deleteBlueprint(uint256 blueprintId) external;
 
     /**
-     * @dev Craft token(s) using a given crafting recipe.
+     * @dev Craft token(s) using a given blueprint.
      * Burns input tokens and mints output tokens.
      */
-    function craft(uint256 recipeId) external;
+    function craft(uint256 blueprintId) external;
 }
