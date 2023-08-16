@@ -130,14 +130,7 @@ describe("Workbench", function () {
             outputIds,
             outputAmounts
           )
-        )
-          .to.be.revertedWithCustomError(workbench, "InvalidBlueprintLength")
-          .withArgs(
-            inputIds.length,
-            inputAmounts.length,
-            outputIds.length,
-            outputAmounts.length
-          );
+        ).to.be.revertedWithCustomError(workbench, "InvalidBlueprintParams");
       }
     });
 
@@ -153,14 +146,7 @@ describe("Workbench", function () {
             outputIds,
             outputAmounts
           )
-        )
-          .to.be.revertedWithCustomError(workbench, "InvalidBlueprintLength")
-          .withArgs(
-            inputIds.length,
-            inputAmounts.length,
-            outputIds.length,
-            outputAmounts.length
-          );
+        ).to.be.revertedWithCustomError(workbench, "InvalidBlueprintParams");
       }
     });
 
@@ -176,9 +162,7 @@ describe("Workbench", function () {
             outputIds,
             outputAmounts
           )
-        )
-          .to.be.revertedWithCustomError(workbench, "InvalidAmount")
-          .withArgs(0);
+        ).to.be.revertedWithCustomError(workbench, "InvalidBlueprintParams");
       }
     });
 

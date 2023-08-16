@@ -16,14 +16,12 @@ interface IWorkbench {
     }
 
     /**
-     * @dev Empty array or a mismatch between the ids and amounts length for a create blueprint call.
+     * @dev the empty array was provided or
+     * there was a mismatch between the ids and amounts length or
+     * the amount was set to invalid value i.e. zero.
+     * in create blueprint call
      */
-    error InvalidBlueprintLength(
-        uint256 inputIdsLength,
-        uint256 inputAmountsLength,
-        uint256 outputIdsLength,
-        uint256 outputAmountsLength
-    );
+    error InvalidBlueprintParams();
 
     /**
      * @dev The `blueprintId` already exist.
@@ -34,16 +32,6 @@ interface IWorkbench {
      * @dev The `blueprintId` does not exist.
      */
     error BlueprintNotFound(uint256 blueprintId);
-
-    /**
-     * @dev The amount was set to invalid value i.e. zero.
-     */
-    error InvalidAmount(uint256 amount);
-
-    /**
-     * @dev The amount was set to invalid value i.e. zero.
-     */
-    error DuplicateId(uint256 id);
 
     /**
      * @dev There is not enough tokens to initiate craft.

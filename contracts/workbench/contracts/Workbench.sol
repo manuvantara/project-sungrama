@@ -38,21 +38,30 @@ abstract contract Workbench is Ownable, IWorkbench {
     }
 
     /**
-     * @dev Validates that amounts are not zero.
+     * @dev Checks blueprint params are valid, otherwise reverts
      */
-    function _validateAmounts(
+    function _validateBlueprintParams(
+        uint256[] calldata inputIds,
         uint256[] calldata inputAmounts,
+        uint256[] calldata outputIds,
         uint256[] calldata outputAmounts
     ) private pure {
+        if (
+            inputIds.length != inputAmounts.length ||
+            outputIds.length != outputAmounts.length ||
+            inputIds.length == 0 ||
+            outputIds.length == 0
+        ) revert InvalidBlueprintParams();
+
         for (uint256 i = 0; i < inputAmounts.length; i++) {
             if (inputAmounts[i] == 0) {
-                revert InvalidAmount(inputAmounts[i]);
+                revert InvalidBlueprintParams();
             }
         }
 
         for (uint256 i = 0; i < outputAmounts.length; i++) {
             if (outputAmounts[i] == 0) {
-                revert InvalidAmount(outputAmounts[i]);
+                revert InvalidBlueprintParams();
             }
         }
     }
@@ -66,19 +75,12 @@ abstract contract Workbench is Ownable, IWorkbench {
         uint256[] calldata outputIds,
         uint256[] calldata outputAmounts
     ) external virtual override onlyOwner returns (uint256 newBlueprintId) {
-        if (
-            inputIds.length != inputAmounts.length ||
-            outputIds.length != outputAmounts.length ||
-            inputIds.length == 0 ||
-            outputIds.length == 0
-        )
-            revert InvalidBlueprintLength(
-                inputIds.length,
-                inputAmounts.length,
-                outputIds.length,
-                outputAmounts.length
-            );
-        _validateAmounts(inputAmounts, outputAmounts);
+        _validateBlueprintParams(
+            inputIds,
+            inputAmounts,
+            outputIds,
+            outputAmounts
+        );
 
         newBlueprintId = hashBlueprint(
             inputIds,
