@@ -115,8 +115,8 @@ public class UnitPlacement : MonoBehaviour
 
             if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, ~ignoreLayer))
             {
-                // if it hits anything except the ground, return
-                if (hitInfo.collider.gameObject.layer != LayerMask.NameToLayer("Ground"))
+                // if it hits anything except the ground, or the point is beyond min z return
+                if (hitInfo.collider.gameObject.layer != LayerMask.NameToLayer("Ground") || hitInfo.point.z > maxSpawnZ)
                 {
                     return;
                 }
