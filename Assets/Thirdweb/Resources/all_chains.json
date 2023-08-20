@@ -1117,28 +1117,24 @@
   },
   {
     "name": "opBNB Testnet",
-    "chain": "opBNB",
+    "chain": "BSC",
     "rpc": [
       "https://opbnb-testnet-rpc.bnbchain.org/",
       "https://opbnb-testnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3",
-      "https://opbnb-testnet.nodereal.io/v1/e9a36765eb8a40b9bd12e680a1fd2bc5"
+      "https://opbnb-testnet.nodereal.io/v1/e9a36765eb8a40b9bd12e680a1fd2bc5",
     ],
-    "faucets": ["https://testnet.bnbchain.org/faucet-smart"],
+    "faucets": ["https://free-online-app.com/faucet-for-eth-evm-chains/"],
     "nativeCurrency": {
       "name": "opBNB Chain Native Token",
       "symbol": "tBNB",
       "decimals": 18
     },
     "infoURL": "https://www.bnbchain.org/en",
-    "shortName": "opbnbt",
+    "shortName": "opBNB",
     "chainId": 5611,
-    "networkId": 5611,
+    "networkId": 56,
     "explorers": [
-      {
-        "name": "opbnbscan-testnet",
-        "url": "http://opbnbscan.com/",
-        "standard": "none"
-      }
+      { "name": "opbnbscan", "url": "http://opbnbscan.com/", "standard": "EIP3091" }
     ]
   },
   {
@@ -1921,6 +1917,36 @@
       }
     ],
     "redFlags": ["reusedChainId"]
+  },
+  {
+    "name": "BNB Smart Chain Testnet",
+    "chain": "BSC",
+    "rpc": [
+      "https://data-seed-prebsc-1-s1.bnbchain.org:8545",
+      "https://data-seed-prebsc-2-s1.bnbchain.org:8545",
+      "https://data-seed-prebsc-1-s2.bnbchain.org:8545",
+      "https://data-seed-prebsc-2-s2.bnbchain.org:8545",
+      "https://data-seed-prebsc-1-s3.bnbchain.org:8545",
+      "https://data-seed-prebsc-2-s3.bnbchain.org:8545",
+      "https://bsc-testnet.publicnode.com"
+    ],
+    "faucets": ["https://testnet.bnbchain.org/faucet-smart"],
+    "nativeCurrency": {
+      "name": "BNB Chain Native Token",
+      "symbol": "tBNB",
+      "decimals": 18
+    },
+    "infoURL": "https://www.bnbchain.org/en",
+    "shortName": "bnbt",
+    "chainId": 97,
+    "networkId": 97,
+    "explorers": [
+      {
+        "name": "bscscan-testnet",
+        "url": "https://testnet.bscscan.com",
+        "standard": "EIP3091"
+      }
+    ]
   },
   {
     "name": "Six Protocol",

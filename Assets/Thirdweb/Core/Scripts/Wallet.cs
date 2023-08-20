@@ -562,12 +562,12 @@ namespace Thirdweb
         Metamask,
         Coinbase,
         WalletConnect,
+        LocalHdWallet,
         Injected,
         MagicLink,
         LocalWallet,
         SmartWallet,
         Paper,
         Hyperplay,
-        LocalHdWallet,
     }
 }

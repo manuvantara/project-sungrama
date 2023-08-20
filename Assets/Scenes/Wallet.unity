@@ -167,7 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53141a874ab142c8bef9d7cfc63af492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Mnemonic>k__BackingField: 
 --- !u!1 &207507031
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +291,6 @@ MonoBehaviour:
   m_ScreenName: CreateScreen
   m_MainUIManager: {fileID: 834744819}
   m_Document: {fileID: 834744814}
-  m_Mnemonic: 
 --- !u!1 &533788603
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,9 +417,6 @@ MonoBehaviour:
   m_ScreenName: ImportScreen
   m_MainUIManager: {fileID: 834744819}
   m_Document: {fileID: 834744814}
-  m_ImportedMnemonic: 
-  m_IsTermsChecked: 0
-  m_IsMnemonicValid: 0
 --- !u!1 &635898892
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,8 +629,6 @@ MonoBehaviour:
   m_VerifyModalScreen: {fileID: 1923674489}
   m_SetPasswordModalScreen: {fileID: 1488729440}
   m_WalletModalScreen: {fileID: 635898894}
-  m_AllModalScreens: []
-  m_MainMenuDocument: {fileID: 0}
 --- !u!1 &961028928
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,12 +781,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56d9559a79e304f44b5ac4d726f1ee68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chain: opbnb-testnet
+  activeChain: opbnb-testnet
   supportedChains:
   - identifier: opbnb-testnet
     chainId: 5611
     rpcOverride: https://opbnb-testnet-rpc.bnbchain.org/
   clientId: 
+  initializeOnAwake: 1
   appName: 
   appDescription: 
   appIcons:
@@ -945,11 +939,6 @@ MonoBehaviour:
   m_ScreenName: SetPasswordScreen
   m_MainUIManager: {fileID: 834744819}
   m_Document: {fileID: 834744814}
-  m_SetPasswordShowIcon: {fileID: 0}
-  m_SetPasswordHideIcon: {fileID: 0}
-  m_Password: 
-  m_IsPasswordsEqual: 0
-  m_IsSecurityChecked: 0
 --- !u!1 &1759485944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,9 +1061,6 @@ MonoBehaviour:
   m_ScreenName: VerifyScreen
   m_MainUIManager: {fileID: 834744819}
   m_Document: {fileID: 834744814}
-  m_MnemonicWord: 
-  m_IsMnemonicWordVerified: 0
-  m_IsSecurityChecked: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

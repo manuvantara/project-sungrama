@@ -57,7 +57,7 @@ namespace GameWallet.UI.Controllers
             }
             catch (Exception e)
             {
-                Debug.LogError(e);
+                Debug.LogError($"Error connecting to wallet: {e.Message}, {e.StackTrace} {e.Source}", this);
                 SuccessfullyConnected?.Invoke(false);
             }
         }
