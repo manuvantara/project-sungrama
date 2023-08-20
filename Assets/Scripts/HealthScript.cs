@@ -46,7 +46,10 @@ public class HealthScript : MonoBehaviour
         currentHP -= damage;
 
         healthBar.SetHealth(currentHP, initialHP);
-        healthBarAux.SetHealth(currentHP, initialHP);
+        if(healthBarAux != null)
+        {
+            healthBarAux.SetHealth(currentHP, initialHP);
+        }
     }
 
     public void Death() {
