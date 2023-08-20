@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,9 +21,6 @@ public class DataScript : MonoBehaviour
 
         // get the UIController script
         uiController = GameObject.Find("UI").GetComponent<UIController>();
-
-        // get the account address from the sdk
-        accountAddress = ThirdwebManager.Instance.SDK.wallet.GetAddress();
     }
 
     public void CopyAddressInClipboard()
@@ -39,9 +37,9 @@ public class DataScript : MonoBehaviour
         uiController.ShowSuccess();
     }
 
-    public string GetAccountAddress()
+    public async Task<string> GetAccountAddress()
     {
-        accountAddress = ThirdwebManager.Instance.SDK.wallet.GetAddress();
+        accountAddress = await ThirdwebManager.Instance.SDK.wallet.GetAddress();
         return accountAddress;
     }
 }

@@ -37,14 +37,13 @@ public class UIController : MonoBehaviour
 
     public TextMeshProUGUI balanceText;
 
-    private void Start()
+    private async void Start()
     {
         // get the DataScript
         dataScript = GameObject.Find("Data").GetComponent<DataScript>();
 
         statsPage.SetActive(true);
         levelUpPage.SetActive(false);
-
         damageSlider.maxValue = maxDamage;
         armourSlider.maxValue = maxArmour;
         energySlider.maxValue = maxEnergy;
@@ -55,7 +54,7 @@ public class UIController : MonoBehaviour
         cupsText.text = dataScript.cups.ToString();
 
         // update the account address text in a format 0x12...56
-        string accountAddress = dataScript.GetAccountAddress();
+        string accountAddress = await dataScript.GetAccountAddress();
         accountAddressText.text = accountAddress.Substring(0, 4) + "..." + accountAddress.Substring(accountAddress.Length - 4);
 
         // update the balance text
@@ -123,12 +122,12 @@ public class UIController : MonoBehaviour
         popupFail.SetActive(true);
     }
 
-    public void UpdateBalance()
+    public async void UpdateBalance()
     {
         // get the balance from the SDK
-        var value = ThirdwebManager.Instance.SDK.wallet.GetBalance();
+        var value = await ThirdwebManager.Instance.SDK.wallet.GetBalance();
         
         // display the balance capped to 2 decimal places
-        balanceText.text = value.ToString("F2");
+        balanceText.text = value.displayValue;
     }
 }
