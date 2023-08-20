@@ -20,6 +20,9 @@ public class DataScript : MonoBehaviour
 
         // get the UIController script
         uiController = GameObject.Find("UI").GetComponent<UIController>();
+
+        // get the account address from the sdk
+        accountAddress = ThirdwebManager.Instance.SDK.wallet.GetAddress();
     }
 
     public void CopyAddressInClipboard()
@@ -38,6 +41,7 @@ public class DataScript : MonoBehaviour
 
     public string GetAccountAddress()
     {
+        accountAddress = ThirdwebManager.Instance.SDK.wallet.GetAddress();
         return accountAddress;
     }
 }

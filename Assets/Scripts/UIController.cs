@@ -35,6 +35,8 @@ public class UIController : MonoBehaviour
 
     public TextMeshProUGUI cupsText;
 
+    public TextMeshProUGUI balanceText;
+
     private void Start()
     {
         // get the DataScript
@@ -55,6 +57,9 @@ public class UIController : MonoBehaviour
         // update the account address text in a format 0x12...56
         string accountAddress = dataScript.GetAccountAddress();
         accountAddressText.text = accountAddress.Substring(0, 4) + "..." + accountAddress.Substring(accountAddress.Length - 4);
+
+        // update the balance text
+        UpdateBalance();
     }
 
     public void StartGame()
@@ -116,5 +121,14 @@ public class UIController : MonoBehaviour
         popupSuccess.SetActive(false);
         popupPending.SetActive(false);
         popupFail.SetActive(true);
+    }
+
+    public void UpdateBalance()
+    {
+        // get the balance from the SDK
+        var value = ThirdwebManager.Instance.SDK.wallet.GetBalance();
+        
+        // display the balance capped to 2 decimal places
+        balanceText.text = value.ToString("F2");
     }
 }
