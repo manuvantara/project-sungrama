@@ -1,0 +1,21 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Button" src="project://database/Assets/UI%20Toolkit/Uxml/Button.uxml?fileID=9197481963319205126&amp;guid=622f04ff78e694485bb505ae376d32ff&amp;type=3#Button" />
+    <Style src="project://database/Assets/UI%20Toolkit/Uss/VerifyScreen.uss?fileID=7433441132597879392&amp;guid=9675d1ef8e9ae4997aa05dc6732bfc59&amp;type=3#VerifyScreen" />
+    <Style src="project://database/Assets/UI%20Toolkit/Uss/Toggle.uss?fileID=7433441132597879392&amp;guid=c4f72836a312b4c70bb59d2fc62def3e&amp;type=3#Toggle" />
+    <ui:VisualElement name="verify-layout" class="layout">
+        <ui:VisualElement name="verify-wrapper" class="wrapper">
+            <ui:VisualElement name="verify-container" class="container">
+                <ui:Label text="VERIFY MNEMONIC" display-tooltip-when-elided="true" name="verify__title" class="title verify__title" />
+                <ui:Label text="Validate your mnemonic and safeguard your wallet from unauthorized access." display-tooltip-when-elided="true" name="verify__subtitle" class="subtitle verify__subtitle" />
+                <ui:VisualElement name="verify-word__container" style="margin-top: 24px; width: 100%;">
+                    <ui:Label text="There would be a random word id" display-tooltip-when-elided="true" name="verify-word__label" class="verify-word__label" />
+                    <ui:TextField picking-mode="Ignore" name="verify-word__input" tooltip="Enter mnemonic word" focusable="true" class="input verify-word__input" />
+                </ui:VisualElement>
+                <ui:VisualElement name="verify-security" style="margin-top: 24px; margin-bottom: 24px;">
+                    <ui:Toggle label="I confirm that no one saw my password because I may lose all my assets." name="verify-security__toggle" class="toggle" style="max-width: 464px; height: 50px; flex-wrap: nowrap;" />
+                </ui:VisualElement>
+                <ui:Instance template="Button" name="verify-button__template" style="width: 100%;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

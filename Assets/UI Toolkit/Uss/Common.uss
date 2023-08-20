@@ -1,0 +1,35 @@
+:root {
+    --transparent: rgba(255, 255, 255, 0);
+    --white: rgb(250, 250, 250);
+    --black: rgb(2, 1, 6);
+    --gray: rgb(51, 51, 51);
+    --gray-light: rgb(153, 153, 153);
+    --red: rgb(253, 54, 73);
+    --green: rgb(115, 244, 67);
+    --orange: rgb(255, 134, 1);
+    --yellow: rgb(252, 238, 9);
+    --azure: rgb(0, 240, 255);
+}
+
+Label.title {
+    font-size: 30px;
+    letter-spacing: -0.225px;
+    color: var(--yellow);
+    padding: 0;
+    margin-bottom: 16px;
+    text-shadow: 0 0 4px rgb(255, 245, 0);
+    -unity-text-outline-color: rgb(0, 0, 0);
+    -unity-font-definition: resource('Fonts & Materials/Astron-Bold SDF');
+}
+
+Label.subtitle {
+    font-size: 16px;
+    -unity-font-definition: resource('Fonts & Materials/Montserrat-Regular SDF');
+    color: var(--white);
+    -unity-text-align: middle-center;
+    white-space: normal;
+}
+
+.unity-better-text-field--hidden {
+    display: none;
+}

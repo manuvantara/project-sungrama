@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641222, b: 0.57481664, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -23055,6 +23055,7 @@ MonoBehaviour:
   popupFail: {fileID: 1276092014}
   accountAddressText: {fileID: 1553934580}
   cupsText: {fileID: 166075605}
+  balanceText: {fileID: 877161769}
 --- !u!114 &1997127563
 MonoBehaviour:
   m_ObjectHideFlags: 0

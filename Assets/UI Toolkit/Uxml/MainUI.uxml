@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="CreateUI" src="project://database/Assets/UI%20Toolkit/Uxml/CreateScreen.uxml?fileID=9197481963319205126&amp;guid=749e04a57799e499c9ea5e9f55c1d5ad&amp;type=3#CreateScreen" />
+    <ui:Template name="ImportScreen" src="project://database/Assets/UI%20Toolkit/Uxml/ImportScreen.uxml?fileID=9197481963319205126&amp;guid=df6375cf7c77d474da6bf5aebc29160e&amp;type=3#ImportScreen" />
+    <ui:Template name="VerifyScreen" src="project://database/Assets/UI%20Toolkit/Uxml/VerifyScreen.uxml?fileID=9197481963319205126&amp;guid=ce974722d19024691adf33089d18a7f1&amp;type=3#VerifyScreen" />
+    <ui:Template name="WalletScreen" src="project://database/Assets/UI%20Toolkit/Uxml/WalletScreen.uxml?fileID=9197481963319205126&amp;guid=e4d61afca89914c5f928dd9424bd6f47&amp;type=3#WalletScreen" />
+    <ui:Template name="SetPasswordScreen" src="project://database/Assets/UI%20Toolkit/Uxml/SetPasswordScreen.uxml?fileID=9197481963319205126&amp;guid=547b61252caa149a1b2f91b544d4e02f&amp;type=3#SetPasswordScreen" />
+    <ui:Instance template="CreateUI" name="CreateScreen" style="display: flex; flex-grow: 1;" />
+    <ui:Instance template="ImportScreen" name="ImportScreen" style="display: none; flex-grow: 1;" />
+    <ui:Instance template="VerifyScreen" name="VerifyScreen" style="display: none; flex-grow: 1;" />
+    <ui:Instance template="WalletScreen" name="WalletScreen" style="display: none; flex-grow: 1;" />
+    <ui:Instance template="SetPasswordScreen" name="SetPasswordScreen" style="display: none; flex-grow: 1;" />
+</ui:UXML>

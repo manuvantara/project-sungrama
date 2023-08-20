@@ -1,0 +1,36 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Button" src="project://database/Assets/UI%20Toolkit/Uxml/Button.uxml?fileID=9197481963319205126&amp;guid=622f04ff78e694485bb505ae376d32ff&amp;type=3#Button" />
+    <Style src="project://database/Assets/UI%20Toolkit/Uss/CreateScreen.uss?fileID=7433441132597879392&amp;guid=9d16eca2c49044fa8be5af9f262d042a&amp;type=3#CreateScreen" />
+    <ui:VisualElement name="create-layout" class="layout">
+        <ui:VisualElement name="create-wrapper" class="wrapper">
+            <ui:VisualElement name="create-container" class="container">
+                <ui:VisualElement name="create-header" class="create-header">
+                    <ui:Label text="Create a new wallet" display-tooltip-when-elided="true" name="create-title" class="create-title" />
+                    <ui:Label text="Create a crypto wallet with secure seed phrases for protection of your assets." display-tooltip-when-elided="true" name="create-subtitle" class="create-subtitle" style="flex-wrap: wrap;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="VisualElement" style="width: 100%;">
+                    <ui:Label text="Mnemonic (consists from 12 words)" display-tooltip-when-elided="true" name="create-body__label" class="create-body__label" style="color: rgb(255, 255, 255); font-size: 16px; -unity-font-definition: resource(&apos;Fonts &amp; Materials/Montserrat-Medium SDF&apos;); -unity-text-align: upper-center;" />
+                    <ui:VisualElement name="create-body-mnemonic__container" style="flex-direction: row; align-items: center; justify-content: center;">
+                        <ui:VisualElement name="create-body-mnemonic-container__left" class="create-body-mnemonic-container__left" />
+                        <ui:VisualElement name="create-body-mnemonic-container__right" class="create-body-mnemonic-container__right" />
+                    </ui:VisualElement>
+                    <ui:VisualElement style="flex-direction: row; flex-grow: initial; width: 100%; align-items: center; justify-content: center; margin-top: 24px; margin-bottom: 24px; padding-top: 0; padding-bottom: 0;">
+                        <ui:VisualElement style="flex-direction: row;">
+                            <ui:VisualElement style="background-image: resource(&apos;Sprites/Copy&apos;); width: 24px; height: 24px;" />
+                            <ui:Button text="Copy" display-tooltip-when-elided="true" name="create-body__copy" class="create-body__copy" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="flex-direction: row; margin-left: 32px;">
+                            <ui:VisualElement style="background-image: resource(&apos;Sprites/Regenerate&apos;); width: 24px; height: 24px;" />
+                            <ui:Button text="Regenerate" display-tooltip-when-elided="true" name="create-body__regenerate" class="create-body__regenerate" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:Instance template="Button" name="create-button-template" style="width: 100%;" />
+                <ui:VisualElement name="create-footer" style="flex-direction: row; margin-top: 34px;">
+                    <ui:Label text="Already have a wallet?" display-tooltip-when-elided="true" name="create-footer__label" class="create-footer__label" />
+                    <ui:Button text=" Import an existing wallet." display-tooltip-when-elided="true" name="create-footer__link-button" class="create-footer__link" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
