@@ -102,8 +102,8 @@ public class UnitPlacement : MonoBehaviour
                 Vector3 spawnPosition = hitInfo.point;
                 spawnPosition.y += 0.25f;
                 // change the x and z as a multiple of 1f
-                spawnPosition.x = Mathf.Round(spawnPosition.x);
-                spawnPosition.z = Mathf.Round(spawnPosition.z);
+                spawnPosition.x = Mathf.Round(spawnPosition.x) + 0.5f;
+                spawnPosition.z = Mathf.Round(spawnPosition.z) + 0.5f;
                 unitPrefabPreview.transform.position = spawnPosition;
             }
         }
@@ -124,8 +124,8 @@ public class UnitPlacement : MonoBehaviour
                 Vector3 spawnPosition = hitInfo.point;
                 spawnPosition.y += 0.25f;
                 // change the x and z as a multiple of 1f
-                spawnPosition.x = Mathf.Round(spawnPosition.x);
-                spawnPosition.z = Mathf.Round(spawnPosition.z);
+                spawnPosition.x = Mathf.Round(spawnPosition.x) + 0.5f;
+                spawnPosition.z = Mathf.Round(spawnPosition.z) + 0.5f;
                 GameObject unit = Instantiate(unitPrefab, spawnPosition, Quaternion.identity, unitParent.transform);
 
                 // gine the unit Player tag
