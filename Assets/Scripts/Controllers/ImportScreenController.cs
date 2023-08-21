@@ -39,7 +39,7 @@ namespace GameWallet.UI.Controllers
                 return;
             }
             
-            WalletManager.Instance.ImportWalletMnemonic(mnemonic);
+            WalletManager.Instance.Mnemonic = mnemonic;
             ImportedMnemonicValid?.Invoke();
         }
         
