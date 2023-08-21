@@ -1,0 +1,31 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Button" src="project://database/Assets/UI%20Toolkit/Uxml/Button.uxml?fileID=9197481963319205126&amp;guid=622f04ff78e694485bb505ae376d32ff&amp;type=3#Button" />
+    <Style src="project://database/Assets/UI%20Toolkit/Uss/UnlockScreen.uss?fileID=7433441132597879392&amp;guid=39aeb16af37f443869e1ca41b92d1699&amp;type=3#UnlockScreen" />
+    <Style src="project://database/Assets/UI%20Toolkit/Uss/Toggle.uss?fileID=7433441132597879392&amp;guid=c4f72836a312b4c70bb59d2fc62def3e&amp;type=3#Toggle" />
+    <ui:VisualElement name="unlock-layout" class="layout" style="flex-grow: 1;">
+        <ui:VisualElement name="unlock-wrapper" class="wrapper unlock-wrapper" style="flex-grow: 0; min-height: 900px;">
+            <ui:VisualElement name="unlock-container" class="container unlock-container" style="flex-grow: 0; height: auto;">
+                <ui:Label tabindex="-1" text="Unlock the wallet" parse-escape-sequences="true" display-tooltip-when-elided="true" name="unlock-title" class="title unlock-title" />
+                <ui:Label tabindex="-1" text="Secure Unlock: Log in to your wallet with your password." parse-escape-sequences="true" display-tooltip-when-elided="true" name="unlock-subtitle" class="subtitle unlock-subtitle" />
+                <ui:VisualElement name="unlock-form" style="width: 100%;">
+                    <ui:VisualElement name="unlock-form__control" class="unlock-form__control">
+                        <ui:Label tabindex="-1" text="Password" parse-escape-sequences="true" display-tooltip-when-elided="true" name="unlock-form__label" class="unlock-form__label" />
+                        <ui:TextField picking-mode="Ignore" name="unlock-form__input" password="true" class="input unlock-form__input">
+                            <ui:Button display-tooltip-when-elided="false" enable-rich-text="false" name="unlock-form__input-icon" class="set-password__input-icon unlock-form__input-icon" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                        </ui:TextField>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="unlock-form__control">
+                        <ui:Toggle label="I confirm that no one saw my password because I may lose all my assets." name="unlock-form__toggle" class="toggle unlock-form__toggle" style="flex-wrap: nowrap;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:Instance template="Button" name="unlock-button-template" class="unlock-button-template">
+                    <AttributeOverrides element-name="button" text="UNLOCK THE WALLET" />
+                </ui:Instance>
+                <ui:VisualElement name="unlock-footer" class="unlock-footer">
+                    <ui:Label tabindex="-1" text="Forgot or want to change the password?" parse-escape-sequences="true" display-tooltip-when-elided="true" name="unlock-footer__label" class="unlock-footer__label" />
+                    <ui:Button text="Import your wallet again and set a new password." parse-escape-sequences="true" display-tooltip-when-elided="true" name="unlock-footer__link" class="unlock-footer__link" style="display: flex;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

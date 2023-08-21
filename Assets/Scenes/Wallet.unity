@@ -123,6 +123,57 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &23153210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 23153211}
+  - component: {fileID: 23153212}
+  m_Layer: 5
+  m_Name: UnlockScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &23153211
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23153210}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 834744818}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &23153212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23153210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098d72333bd064fb99f8fd856a5b2073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ScreenName: UnlockScreen
+  m_MainUIManager: {fileID: 834744819}
+  m_Document: {fileID: 834744814}
 --- !u!1 &168956656
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,6 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53141a874ab142c8bef9d7cfc63af492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_WalletJsonPath: wallet.json
 --- !u!1 &207507031
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +420,7 @@ Transform:
   - {fileID: 533788604}
   - {fileID: 498001147}
   - {fileID: 745963741}
+  - {fileID: 1518035864}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &617794746
@@ -605,6 +658,7 @@ RectTransform:
   - {fileID: 1923674488}
   - {fileID: 635898893}
   - {fileID: 1488729439}
+  - {fileID: 23153211}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -629,6 +683,7 @@ MonoBehaviour:
   m_VerifyModalScreen: {fileID: 1923674489}
   m_SetPasswordModalScreen: {fileID: 1488729440}
   m_WalletModalScreen: {fileID: 635898894}
+  m_UnlockModalScreen: {fileID: 23153212}
 --- !u!1 &961028928
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,6 +994,52 @@ MonoBehaviour:
   m_ScreenName: SetPasswordScreen
   m_MainUIManager: {fileID: 834744819}
   m_Document: {fileID: 834744814}
+--- !u!1 &1518035863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1518035864}
+  - component: {fileID: 1518035865}
+  m_Layer: 0
+  m_Name: UnlockScreenController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1518035864
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518035863}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 616248599}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1518035865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518035863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7520349570b564cc7bea9c2dc32814f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InputShowIcon: {fileID: 21300000, guid: 9dda87f61941246f399a2dfe1e7e739d, type: 3}
+  m_InputHideIcon: {fileID: 21300000, guid: 46f55d804ce8d4e61b9a41ef456b70f4, type: 3}
 --- !u!1 &1759485944
 GameObject:
   m_ObjectHideFlags: 0

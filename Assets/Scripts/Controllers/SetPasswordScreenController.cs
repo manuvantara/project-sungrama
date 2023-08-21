@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using GameWallet.Managers;
 using GameWallet.Screens;
 using Thirdweb;
 using UnityEngine;
@@ -52,12 +53,17 @@ namespace GameWallet.UI.Controllers
                 await ThirdwebManager.Instance.SDK.wallet.Connect(
                     connection
                 );
+                
+                WalletManager.Instance.SaveWalletMnemonicToJsonFile(
+                    WalletManager.Instance.Mnemonic,
+                    password
+                );
 
                 SuccessfullyConnected?.Invoke(true);
             }
             catch (Exception e)
             {
-                Debug.LogError($"Error connecting to wallet: {e.Message}, {e.StackTrace} {e.Source}", this);
+                Debug.LogError($"Error connecting to wallet: {e.Message}, {e.StackTrace}");
                 SuccessfullyConnected?.Invoke(false);
             }
         }
