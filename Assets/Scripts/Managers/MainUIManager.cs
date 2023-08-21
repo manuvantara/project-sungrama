@@ -20,6 +20,7 @@ namespace GameWallet.Managers
         [SerializeField] VerifyScreen m_VerifyModalScreen;
         [SerializeField] SetPasswordScreen m_SetPasswordModalScreen;
         [SerializeField] WalletScreen m_WalletModalScreen;
+        [SerializeField] UnlockScreen m_UnlockModalScreen;
         
         List<BaseScreen> m_AllModalScreens = new List<BaseScreen>();
         
@@ -30,12 +31,20 @@ namespace GameWallet.Managers
         {
             m_MainMenuDocument = GetComponent<UIDocument>();
             SetupModalScreens();
-            ShowCreateScreen();
         }
 
         void Start()
         {
             Time.timeScale = 1f;
+            
+            WalletManager.Instance.DeleteWalletMnemonicJsonFile();
+            
+            if (WalletManager.Instance.WalletMnemonicJsonFileExists())
+            {
+                ShowUnlockScreen();
+            } else {
+                ShowCreateScreen();
+            }
         }
 
         void SetupModalScreens()
@@ -54,6 +63,9 @@ namespace GameWallet.Managers
             
             if (m_WalletModalScreen != null)
                 m_AllModalScreens.Add(m_WalletModalScreen);
+            
+            if (m_UnlockModalScreen != null)
+                m_AllModalScreens.Add(m_UnlockModalScreen);
         }
 
         // shows one screen at a time
@@ -99,6 +111,11 @@ namespace GameWallet.Managers
         public void ShowWalletScreen()
         {
             ShowModalScreen(m_WalletModalScreen);
+        }
+
+        public void ShowUnlockScreen()
+        {
+            ShowModalScreen(m_UnlockModalScreen);
         }
 
         // opens the Shop Screen directly to a specific tab (e.g. to gold or gem shop) from the Options Bar
