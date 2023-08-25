@@ -12,6 +12,8 @@ TagManager:
   - EnemyBase
   - PlayerBase
   - Main UI
+  - Blocked
+  - Available
   layers:
   - Default
   - TransparentFX

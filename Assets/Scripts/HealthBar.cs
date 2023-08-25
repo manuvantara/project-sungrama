@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     [SerializeField] private Camera mainCamera;
-    [SerializeField] private Image fillImage;
+    [SerializeField] public Image fillImage;
 
     private void Start()
     {
@@ -17,7 +17,7 @@ public class HealthBar : MonoBehaviour
     private void Update()
     {
         // if the helath bar is on the enemy or player unit, make it face the camera
-        if (this.gameObject.tag == "Unit")
+        if (this.gameObject.tag == "Unit" || this.gameObject.tag == "Enemy" || this.gameObject.tag == "Player")
         {
             transform.LookAt(transform.position + mainCamera.transform.rotation * Vector3.forward,
             mainCamera.transform.rotation * Vector3.up);

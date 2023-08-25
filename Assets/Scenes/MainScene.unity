@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: f15c336556dd74f40aaca655f7767970, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1339381865}
-  m_IndirectSpecularColor: {r: 0.99652725, g: 0.8711986, b: 0.7254972, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -273,6 +273,18 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1666152210}
+    - target: {fileID: 7151835528726044707, guid: 9ed7ac2a2c8604d349e4e2a2ed48c2d3, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10980392
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151835528726044707, guid: 9ed7ac2a2c8604d349e4e2a2ed48c2d3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10980392
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151835528726044707, guid: 9ed7ac2a2c8604d349e4e2a2ed48c2d3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5568628
+      objectReference: {fileID: 0}
     - target: {fileID: 8042968665634180427, guid: 9ed7ac2a2c8604d349e4e2a2ed48c2d3, type: 3}
       propertyPath: aimingPart
       value: 
@@ -1924,6 +1936,18 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 2036368160}
+    - target: {fileID: 7151835528726044707, guid: 9ed7ac2a2c8604d349e4e2a2ed48c2d3, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10980392
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151835528726044707, guid: 9ed7ac2a2c8604d349e4e2a2ed48c2d3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10980392
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151835528726044707, guid: 9ed7ac2a2c8604d349e4e2a2ed48c2d3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5568628
+      objectReference: {fileID: 0}
     - target: {fileID: 8042968665634180427, guid: 9ed7ac2a2c8604d349e4e2a2ed48c2d3, type: 3}
       propertyPath: aimingPart
       value: 
@@ -2068,7 +2092,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.7877358, g: 0.86937594, b: 1, a: 1}
+  m_BackGroundColor: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3535,7 +3559,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 13a826fc8f0831c77aa4170ade7fec67, type: 2}
+  - {fileID: 2100000, guid: d59ba9bc21df3fe1c8eb3004ea2e0a01, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3601,8 +3625,8 @@ MonoBehaviour:
   - {fileID: 3727313686438409575, guid: e2a3b5d3ee13cba469171e80452cabee, type: 3}
   - {fileID: 19353030988395172, guid: 1dc4519f4571d03a28426b0da8d2b1d0, type: 3}
   unitPrefabPreviews:
-  - {fileID: 3727313686438409575, guid: 27d26e2f01563ceeba03097d46eda486, type: 3}
-  - {fileID: 19353030988395172, guid: 660aeff6f8abad48988793289225a35d, type: 3}
+  - {fileID: 3727313686438409575, guid: 1e288ed72808d6546aa61f890dbfa3d5, type: 3}
+  - {fileID: 19353030988395172, guid: d3efa09f27da26d099bbc8d2fba709e7, type: 3}
   maxSpawnZ: 0
   unitButtons:
   - {fileID: 1020197822}
@@ -3643,6 +3667,18 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 7819166457323634150}
+    - target: {fileID: 319761345620261051, guid: 28ea07ca0f32c503c855124d9e400a30, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10980392
+      objectReference: {fileID: 0}
+    - target: {fileID: 319761345620261051, guid: 28ea07ca0f32c503c855124d9e400a30, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10980392
+      objectReference: {fileID: 0}
+    - target: {fileID: 319761345620261051, guid: 28ea07ca0f32c503c855124d9e400a30, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5568628
+      objectReference: {fileID: 0}
     - target: {fileID: 1532929598932098061, guid: 28ea07ca0f32c503c855124d9e400a30, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4905,6 +4941,18 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 82897952}
+    - target: {fileID: 7151835528726044707, guid: 9ed7ac2a2c8604d349e4e2a2ed48c2d3, type: 3}
+      propertyPath: m_Color.b
+      value: 0.56078434
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151835528726044707, guid: 9ed7ac2a2c8604d349e4e2a2ed48c2d3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.40392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151835528726044707, guid: 9ed7ac2a2c8604d349e4e2a2ed48c2d3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.10980392
+      objectReference: {fileID: 0}
     - target: {fileID: 8042968665634180427, guid: 9ed7ac2a2c8604d349e4e2a2ed48c2d3, type: 3}
       propertyPath: aimingPart
       value: 
@@ -5726,6 +5774,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 720955470}
     m_Modifications:
+    - target: {fileID: 5819602413926498086, guid: 3bb9b02a860580071ab7935344031d6c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e677d9a73fafadd2b9404731c90edb91, type: 3}
     - target: {fileID: 6719856955340293614, guid: 3bb9b02a860580071ab7935344031d6c, type: 3}
       propertyPath: m_Name
       value: Center
@@ -5838,6 +5890,18 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1317390390849277702}
+    - target: {fileID: 319761345620261051, guid: 28ea07ca0f32c503c855124d9e400a30, type: 3}
+      propertyPath: m_Color.b
+      value: 0.56078434
+      objectReference: {fileID: 0}
+    - target: {fileID: 319761345620261051, guid: 28ea07ca0f32c503c855124d9e400a30, type: 3}
+      propertyPath: m_Color.g
+      value: 0.40392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 319761345620261051, guid: 28ea07ca0f32c503c855124d9e400a30, type: 3}
+      propertyPath: m_Color.r
+      value: 0.10980392
+      objectReference: {fileID: 0}
     - target: {fileID: 1532929598932098061, guid: 28ea07ca0f32c503c855124d9e400a30, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5973,6 +6037,18 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 984348863}
+    - target: {fileID: 7151835528726044707, guid: 9ed7ac2a2c8604d349e4e2a2ed48c2d3, type: 3}
+      propertyPath: m_Color.b
+      value: 0.56078434
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151835528726044707, guid: 9ed7ac2a2c8604d349e4e2a2ed48c2d3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.40392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151835528726044707, guid: 9ed7ac2a2c8604d349e4e2a2ed48c2d3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.10980392
+      objectReference: {fileID: 0}
     - target: {fileID: 8042968665634180427, guid: 9ed7ac2a2c8604d349e4e2a2ed48c2d3, type: 3}
       propertyPath: aimingPart
       value: 
@@ -6074,6 +6150,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1029268193884566089, guid: e113d9e168d0cd42791caebe2b8afb69, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e677d9a73fafadd2b9404731c90edb91, type: 3}
     - target: {fileID: 3059454519379427270, guid: e113d9e168d0cd42791caebe2b8afb69, type: 3}
       propertyPath: m_Name
       value: Center

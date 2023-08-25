@@ -10031,6 +10031,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health Bar
       objectReference: {fileID: 0}
+    - target: {fileID: 812438272865420810, guid: d3fce1a9d8a41f0f59cd21355c7a920a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1545146448548877965, guid: d3fce1a9d8a41f0f59cd21355c7a920a, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10980392
+      objectReference: {fileID: 0}
+    - target: {fileID: 1545146448548877965, guid: d3fce1a9d8a41f0f59cd21355c7a920a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10980392
+      objectReference: {fileID: 0}
+    - target: {fileID: 1545146448548877965, guid: d3fce1a9d8a41f0f59cd21355c7a920a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5568628
+      objectReference: {fileID: 0}
     - target: {fileID: 6299856380904262355, guid: d3fce1a9d8a41f0f59cd21355c7a920a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

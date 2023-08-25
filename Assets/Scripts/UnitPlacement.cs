@@ -55,7 +55,9 @@ public class UnitPlacement : MonoBehaviour
         unitPrefabPreview = Instantiate(unitPrefabPreviews[0], Vector3.zero, Quaternion.identity);
         // set the layer of preview to Preview
         unitPrefabPreview.layer = LayerMask.NameToLayer("Preview");
-        unitPrefabPreview.GetComponent<Renderer>().material.color = new Color(0, 0, 1, 0.3f);
+        
+        unitPrefabPreview.transform.GetChild(1).gameObject.SetActive(true);
+        unitPrefabPreview.transform.GetChild(0).gameObject.SetActive(false);
     }
 
     public void SelectArcher()
@@ -76,7 +78,9 @@ public class UnitPlacement : MonoBehaviour
         }
         unitPrefabPreview = Instantiate(unitPrefabPreviews[1], Vector3.zero, Quaternion.identity);
         unitPrefabPreview.layer = LayerMask.NameToLayer("Preview");
-        unitPrefabPreview.GetComponent<Renderer>().material.color = new Color(0, 1, 0, 0.3f);
+        
+        unitPrefabPreview.transform.GetChild(1).gameObject.SetActive(true);
+        unitPrefabPreview.transform.GetChild(0).gameObject.SetActive(false);
     }
 
     private void Update()
@@ -94,9 +98,11 @@ public class UnitPlacement : MonoBehaviour
                 if (hitInfo.collider.gameObject.layer != LayerMask.NameToLayer("Ground") || currentEnergy < unitPrefab.GetComponent<UnitAI>().energyRequired
                     || hitInfo.point.z > maxSpawnZ)
                 {
-                    unitPrefabPreview.GetComponent<Renderer>().material.color = new Color(1, 0, 0, 0.3f);
+                    unitPrefabPreview.transform.GetChild(0).gameObject.SetActive(true);
+                    unitPrefabPreview.transform.GetChild(1).gameObject.SetActive(false);
                 } else {
-                    unitPrefabPreview.GetComponent<Renderer>().material.color = new Color(0, 1, 0, 0.3f);
+                    unitPrefabPreview.transform.GetChild(1).gameObject.SetActive(true);
+                    unitPrefabPreview.transform.GetChild(0).gameObject.SetActive(false);
                 }
                 
                 Vector3 spawnPosition = hitInfo.point;
