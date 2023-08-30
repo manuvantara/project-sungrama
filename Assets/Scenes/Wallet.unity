@@ -841,7 +841,7 @@ MonoBehaviour:
   - identifier: opbnb-testnet
     chainId: 5611
     rpcOverride: https://opbnb-testnet-rpc.bnbchain.org/
-  clientId: 
+  clientId: 75f304353a4e15d0a2741252133c3551
   initializeOnAwake: 1
   appName: 
   appDescription: 
