@@ -15,6 +15,7 @@ TagManager:
   - Blocked
   - Available
   - Data
+  - Drop
   layers:
   - Default
   - TransparentFX

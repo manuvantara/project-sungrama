@@ -14,9 +14,11 @@ public class DataScript : MonoBehaviour
 
     private UIController uiController;
 
-    public List<int> inventory = new List<int>();
+    // inventory with resources
+    public List<Resource> inventory = new List<Resource>();
 
-    public int[] inventoryDropIds; 
+    // available resources to drop
+    public ResourceList availableResources;
 
     void Start()
     {
@@ -26,18 +28,9 @@ public class DataScript : MonoBehaviour
         // get the UIController script
         uiController = GameObject.Find("UI").GetComponent<UIController>();
 
-        // shards: 1001
-        // gears: 1002
-        // crystals: 1003
-        // prism: 1004
-        // essence: 1005
-        // sparks: 1006
-        // cores: 1007
-        // plates: 1008
-        // dust: 1009
-        // runes: 1010
-        inventoryDropIds = new int[] { 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008,
-                                       1009, 1010 };
+        // load the available resources from the json file in Resources/Game Data folder
+        string json = Resources.Load<TextAsset>("Game Data/data").text;
+        availableResources = ResourceList.CreateFromJSON(json);
 
         // load the data
         loadData();
@@ -65,14 +58,10 @@ public class DataScript : MonoBehaviour
 
     public void saveData() {
         PlayerPrefs.SetInt("cups", cups);
-        PlayerPrefs.SetString("accountAddress", accountAddress);
         PlayerPrefs.Save();
     }
 
     public void loadData() {
         cups = PlayerPrefs.GetInt("cups", 0);
-        if(accountAddress == "0x1TEST") {
-            accountAddress = PlayerPrefs.GetString("accountAddress", "0x1TEST");
-        }
     }
 }

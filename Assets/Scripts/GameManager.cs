@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -17,8 +18,12 @@ public class GameManager : MonoBehaviour
     public GameObject[] enemyTowers;
     public GameObject[] playerTowers;
 
-    private int playerScore = 0;
+    private int playerScore = 999; //
     private int enemyScore = 0;
+
+    // array of resource images
+    public Sprite[] resourceImages;
+    public Image[] resourceImagesUI;
 
     public DataScript dataScript;
 
@@ -112,14 +117,8 @@ public class GameManager : MonoBehaviour
         // update the text
         playerAddedCupsText.text = addedCups.ToString();
 
-        // add two random items to the player's inventory
-        int randomItem1 = Random.Range(0, dataScript.inventoryDropIds.Length);
-        
-        // add the item tag in the inventory list
-        dataScript.inventory.Add(dataScript.inventoryDropIds[randomItem1]);
-
-        randomItem1 = Random.Range(0, dataScript.inventoryDropIds.Length);
-        dataScript.inventory.Add(dataScript.inventoryDropIds[randomItem1]);
+        // drop the items
+        ItemsDrop(3);
 
         // save the data
         dataScript.saveData();
@@ -158,5 +157,35 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         // load the menu scene
         UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+    }
+
+    public void ItemsDrop(int number) {
+        // if the player has less then 300 cups
+        if (dataScript.cups < 300) {
+            // give the player random items from the first 5 resources
+            for (int i = 0; i < number; i++) {
+                // get a random resource
+                int randomResource = Random.Range(0, 5);
+                // add the resource to the inventory
+                dataScript.inventory.Add(dataScript.availableResources.resources[randomResource]);
+
+                DisplayItemsDropped(randomResource, i);
+            }
+        } else {
+            // give the player random items from all of the resources
+            for (int i = 0; i < number; i++) {
+                // get a random resource
+                int randomResource = Random.Range(0, dataScript.availableResources.resources.Length);
+                // add the resource to the inventory
+                dataScript.inventory.Add(dataScript.availableResources.resources[randomResource]);
+
+                DisplayItemsDropped(randomResource, i);
+            }
+        }
+    }
+
+    public void DisplayItemsDropped(int item, int slotNumber) {
+        // display the item in the UI
+        resourceImagesUI[slotNumber].sprite = resourceImages[item];
     }
 }
