@@ -54,46 +54,55 @@
   "cards": {
     "chainsaw": [
       {
+        "name": "Chainsaw",
         "level": 1,
         "id": "1",
         "image": "https://fastly.picsum.photos/id/396/640/360.jpg?hmac=hFn6wearGVbuDKF22-6nfvLWQ2jmhgFmdHOKItwwzh4"
       },
       {
+        "name": "Chainsaw",
         "level": 2,
         "id": "11",
         "image": "https://fastly.picsum.photos/id/396/640/360.jpg?hmac=hFn6wearGVbuDKF22-6nfvLWQ2jmhgFmdHOKItwwzh4"
       },
       {
+        "name": "Chainsaw",
         "level": 3,
         "id": "111",
         "image": "https://fastly.picsum.photos/id/396/640/360.jpg?hmac=hFn6wearGVbuDKF22-6nfvLWQ2jmhgFmdHOKItwwzh4"
       },
       {
+        "name": "Chainsaw",
         "level": 4,
         "id": "1111",
         "image": "https://fastly.picsum.photos/id/396/640/360.jpg?hmac=hFn6wearGVbuDKF22-6nfvLWQ2jmhgFmdHOKItwwzh4"
       },
       {
+        "name": "Chainsaw",
         "level": 5,
         "id": "11111",
         "image": "https://fastly.picsum.photos/id/396/640/360.jpg?hmac=hFn6wearGVbuDKF22-6nfvLWQ2jmhgFmdHOKItwwzh4"
       },
       {
+        "name": "Chainsaw",
         "level": 6,
         "id": "111111",
         "image": "https://fastly.picsum.photos/id/396/640/360.jpg?hmac=hFn6wearGVbuDKF22-6nfvLWQ2jmhgFmdHOKItwwzh4"
       },
       {
+        "name": "Chainsaw",
         "level": 7,
         "id": "1111111",
         "image": "https://fastly.picsum.photos/id/396/640/360.jpg?hmac=hFn6wearGVbuDKF22-6nfvLWQ2jmhgFmdHOKItwwzh4"
       },
       {
+        "name": "Chainsaw",
         "level": 8,
         "id": "11111111",
         "image": "https://fastly.picsum.photos/id/396/640/360.jpg?hmac=hFn6wearGVbuDKF22-6nfvLWQ2jmhgFmdHOKItwwzh4"
       },
       {
+        "name": "Chainsaw",
         "level": 9,
         "id": "111111111",
         "image": "https://fastly.picsum.photos/id/396/640/360.jpg?hmac=hFn6wearGVbuDKF22-6nfvLWQ2jmhgFmdHOKItwwzh4"
@@ -101,46 +110,55 @@
     ],
     "rooster": [
       {
+        "name": "Rooster",
         "level": 1,
         "id": "2",
         "image": "https://fastly.picsum.photos/id/12/640/360.jpg?hmac=wFykTWGEoBeljsOW9g3okzsS3Hq-pf02nC9ge3UZmR4"
       },
       {
+        "name": "Rooster",
         "level": 2,
         "id": "22",
         "image": "https://fastly.picsum.photos/id/12/640/360.jpg?hmac=wFykTWGEoBeljsOW9g3okzsS3Hq-pf02nC9ge3UZmR4"
       },
       {
+        "name": "Rooster",
         "level": 3,
         "id": "222",
         "image": "https://fastly.picsum.photos/id/12/640/360.jpg?hmac=wFykTWGEoBeljsOW9g3okzsS3Hq-pf02nC9ge3UZmR4"
       },
       {
+        "name": "Rooster",
         "level": 4,
         "id": "2222",
         "image": "https://fastly.picsum.photos/id/12/640/360.jpg?hmac=wFykTWGEoBeljsOW9g3okzsS3Hq-pf02nC9ge3UZmR4"
       },
       {
+        "name": "Rooster",
         "level": 5,
         "id": "22222",
         "image": "https://fastly.picsum.photos/id/12/640/360.jpg?hmac=wFykTWGEoBeljsOW9g3okzsS3Hq-pf02nC9ge3UZmR4"
       },
       {
+        "name": "Rooster",
         "level": 6,
         "id": "222222",
         "image": "https://fastly.picsum.photos/id/12/640/360.jpg?hmac=wFykTWGEoBeljsOW9g3okzsS3Hq-pf02nC9ge3UZmR4"
       },
       {
+        "name": "Rooster",
         "level": 7,
         "id": "2222222",
         "image": "https://fastly.picsum.photos/id/12/640/360.jpg?hmac=wFykTWGEoBeljsOW9g3okzsS3Hq-pf02nC9ge3UZmR4"
       },
       {
+        "name": "Rooster",
         "level": 8,
         "id": "22222222",
         "image": "https://fastly.picsum.photos/id/12/640/360.jpg?hmac=wFykTWGEoBeljsOW9g3okzsS3Hq-pf02nC9ge3UZmR4"
       },
       {
+        "name": "Rooster",
         "level": 9,
         "id": "222222222",
         "image": "https://fastly.picsum.photos/id/12/640/360.jpg?hmac=wFykTWGEoBeljsOW9g3okzsS3Hq-pf02nC9ge3UZmR4"
