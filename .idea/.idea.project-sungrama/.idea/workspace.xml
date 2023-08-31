@@ -5,22 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34646b02-8992-47cd-826d-cb850778d269" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game Data.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game Data/data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameDataManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameDataManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.project-sungrama/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.project-sungrama/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Fonts &amp; Materials/Astron-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Fonts &amp; Materials/Astron-Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Fonts &amp; Materials/Montserrat-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Fonts &amp; Materials/Montserrat-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Fonts &amp; Materials/Montserrat-SemiBold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Fonts &amp; Materials/Montserrat-SemiBold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Wallet.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Wallet.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Base/BaseScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Base/BaseScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/ImportScreenController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/ImportScreenController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/SetPasswordScreenController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/SetPasswordScreenController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/MainUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/MainUIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/WalletManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/WalletManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdweb/Plugins/Nethereum/BouncyCastle.Crypto.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdweb/Plugins/Nethereum/BouncyCastle.Crypto.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdweb/Plugins/Nethereum/Newtonsoft.Json.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdweb/Plugins/Nethereum/Newtonsoft.Json.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI Toolkit/Uxml/MainUI.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI Toolkit/Uxml/MainUI.uxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/packages.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Thirdweb/Core/Scripts/Contract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdweb/Core/Scripts/Contract.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Thirdweb/Core/Scripts/ThirdwebInterceptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdweb/Core/Scripts/ThirdwebInterceptor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Thirdweb/Resources/all_chains.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdweb/Resources/all_chains.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,16 +28,27 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Contract Interactions/Core.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/UnlockScreenController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/GameDataManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RenderInventory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3a2f46faa62546ab81e40cb6c8c7351f5a800/4c/689ca775/DeployContract.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3a2f46faa62546ab81e40cb6c8c7351f5a800/62/395cb6b9/Function.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3a2f46faa62546ab81e40cb6c8c7351f5a800/65/6f26301b/FunctionBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3a2f46faa62546ab81e40cb6c8c7351f5a800/8b/c95cf99c/IEthApiContractService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3a2f46faa62546ab81e40cb6c8c7351f5a800/da/54d99734/FunctionBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/989916793f074ca79869dd78802e49953400/1e/b7e6fe96/HexBigInteger.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/989916793f074ca79869dd78802e49953400/d1/b3605de0/HexBigIntegerBigEndianConvertor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b460bffca71e43fe9135677d7a4518dd175000/f2/701369e4/DisplayStyle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b9dfcc3d94e9442caea82db838bf8fbd2a400/61/927302d0/IEthApiService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b9dfcc3d94e9442caea82db838bf8fbd2a400/eb/7f4f04df/ITransactionManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d03247e4a4aa41d088acf4c375e849c72c00/d2/5ac19d13/Rijndael.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 5
+  &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2UFZxhv1Pmjx0VPJ3rD11EDGEg8" />
   <component name="ProjectViewState">
@@ -62,9 +70,9 @@
   },
   &quot;keyToStringList&quot;: {
     &quot;rider.external.source.directories&quot;: [
-      &quot;/Users/vladyslav/Library/Application Support/JetBrains/Rider2023.2/resharper-host/DecompilerCache&quot;,
-      &quot;/Users/vladyslav/Library/Application Support/JetBrains/Rider2023.2/resharper-host/SourcesCache&quot;,
-      &quot;/Users/vladyslav/.local/share/Symbols/src&quot;
+      &quot;/Users/lorem/Library/Application Support/JetBrains/Rider2023.2/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/lorem/Library/Application Support/JetBrains/Rider2023.2/resharper-host/SourcesCache&quot;,
+      &quot;/Users/lorem/.local/share/Symbols/src&quot;
     ]
   }
 }</component>
@@ -73,6 +81,22 @@
       <option name="EXE_PATH" value="$USER_HOME$/Desktop/sungrama.app/Contents/MacOS/Sungrama" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="$USER_HOME$/Desktop/sungrama.app/Contents/MacOS" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/Desktop/sungrama.app/Contents/MacOS/Sungrama" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Desktop/sungrama.app/Contents/MacOS" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2022.3.6f1/Unity.app/Contents/MacOS/Unity" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath $PROJECT_DIR$ -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
@@ -93,7 +117,35 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
     </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2022.3.6f1/Unity.app/Contents/MacOS/Unity" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath $PROJECT_DIR$ -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
@@ -124,7 +176,17 @@
       <updated>1692537541508</updated>
       <workItem from="1692537541590" duration="10603000" />
       <workItem from="1692559242306" duration="14231000" />
-      <workItem from="1692625817096" duration="8276000" />
+      <workItem from="1692625817096" duration="8538000" />
+      <workItem from="1692650347515" duration="228000" />
+      <workItem from="1692650579244" duration="113000" />
+      <workItem from="1692650719519" duration="7192000" />
+      <workItem from="1692662688140" duration="13138000" />
+      <workItem from="1692821777885" duration="213000" />
+      <workItem from="1692822287835" duration="1715000" />
+      <workItem from="1693069383575" duration="1134000" />
+      <workItem from="1693083791168" duration="20343000" />
+      <workItem from="1693233282496" duration="55000" />
+      <workItem from="1693233372205" duration="13046000" />
     </task>
     <servers />
   </component>

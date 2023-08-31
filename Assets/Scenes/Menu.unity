@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 37509397}
   - component: {fileID: 37509396}
   m_Layer: 5
-  m_Name: Amount
+  m_Name: Send Amount Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2154,7 +2154,7 @@ GameObject:
   - component: {fileID: 191043442}
   - component: {fileID: 191043441}
   m_Layer: 5
-  m_Name: Value
+  m_Name: Send Amount Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2364,7 +2364,7 @@ GameObject:
   - component: {fileID: 202730089}
   - component: {fileID: 202730088}
   m_Layer: 0
-  m_Name: Password
+  m_Name: Password Input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12196,7 +12196,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 932648474845249838, guid: 80a7ddd9361adb71c940842b05f5507c, type: 3}
       propertyPath: m_Name
-      value: A Size Btn
+      value: Proceed Button
       objectReference: {fileID: 0}
     - target: {fileID: 2753442622805796287, guid: 80a7ddd9361adb71c940842b05f5507c, type: 3}
       propertyPath: m_Pivot.x
@@ -12324,6 +12324,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2753442622805796287, guid: 80a7ddd9361adb71c940842b05f5507c, type: 3}
   m_PrefabInstance: {fileID: 1198775890}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1198775892 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3816988779655389849, guid: 80a7ddd9361adb71c940842b05f5507c, type: 3}
+  m_PrefabInstance: {fileID: 1198775890}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1208901709
 GameObject:
   m_ObjectHideFlags: 0
@@ -12337,7 +12348,7 @@ GameObject:
   - component: {fileID: 1208901712}
   - component: {fileID: 1208901711}
   m_Layer: 0
-  m_Name: Recepient
+  m_Name: Recepient Input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13722,7 +13733,7 @@ GameObject:
   - component: {fileID: 1314053187}
   - component: {fileID: 1314053188}
   m_Layer: 0
-  m_Name: Confirm
+  m_Name: Agree Toggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15367,6 +15378,7 @@ GameObject:
   - component: {fileID: 1506554391}
   - component: {fileID: 1506554390}
   - component: {fileID: 1506554392}
+  - component: {fileID: 1506554393}
   m_Layer: 5
   m_Name: Wallet
   m_TagString: Untagged
@@ -15450,6 +15462,26 @@ MonoBehaviour:
   - {fileID: 2143865779}
   - {fileID: 1157617513}
   - {fileID: 1296310214}
+--- !u!114 &1506554393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506554388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0873c91a60c547ec99c4c80db1012483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_recipientAddressInputField: {fileID: 1208901711}
+  m_amountInputField: {fileID: 1729479285}
+  m_agreeToggle: {fileID: 1314053188}
+  m_proceedButton: {fileID: 1198775892}
+  m_amountToTransferText: {fileID: 191043441}
+  m_addressToTransferText: {fileID: 2064844692}
+  m_passwordInputField: {fileID: 202730088}
+  m_sendButton: {fileID: 2058463526}
 --- !u!1 &1521446060
 GameObject:
   m_ObjectHideFlags: 0
@@ -16601,7 +16633,7 @@ GameObject:
   - component: {fileID: 1634791763}
   - component: {fileID: 1634791762}
   m_Layer: 0
-  m_Name: Back
+  m_Name: Back Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17711,7 +17743,7 @@ GameObject:
   - component: {fileID: 1705531172}
   - component: {fileID: 1705531171}
   m_Layer: 0
-  m_Name: Back
+  m_Name: Back Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17977,7 +18009,7 @@ GameObject:
   - component: {fileID: 1729479286}
   - component: {fileID: 1729479285}
   m_Layer: 0
-  m_Name: Amount
+  m_Name: Amount Input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18150,7 +18182,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 932648474845249838, guid: 80a7ddd9361adb71c940842b05f5507c, type: 3}
       propertyPath: m_Name
-      value: A Size Btn
+      value: Send Transaction Button
       objectReference: {fileID: 0}
     - target: {fileID: 2753442622805796287, guid: 80a7ddd9361adb71c940842b05f5507c, type: 3}
       propertyPath: m_Pivot.x
@@ -19892,6 +19924,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832609267}
   m_CullTransparentMesh: 1
+--- !u!1 &1835309465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1835309467}
+  - component: {fileID: 1835309466}
+  m_Layer: 0
+  m_Name: EventManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1835309466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835309465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98f3a8bca7a74d2eab6f0478fa3996be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1835309467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835309465}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -98.90463, y: 106.36566, z: -11.884657}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1836971586
 GameObject:
   m_ObjectHideFlags: 0
@@ -21195,7 +21271,7 @@ GameObject:
   - component: {fileID: 1949143265}
   - component: {fileID: 1949143264}
   m_Layer: 5
-  m_Name: Address
+  m_Name: Receiver Address Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22269,6 +22345,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043989974}
   m_CullTransparentMesh: 1
+--- !u!114 &2058463526 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3816988779655389849, guid: 80a7ddd9361adb71c940842b05f5507c, type: 3}
+  m_PrefabInstance: {fileID: 1732051351}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2064844690
 GameObject:
   m_ObjectHideFlags: 0
@@ -22281,7 +22368,7 @@ GameObject:
   - component: {fileID: 2064844693}
   - component: {fileID: 2064844692}
   m_Layer: 5
-  m_Name: Value
+  m_Name: Receiver Address Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23661,3 +23748,4 @@ SceneRoots:
   - {fileID: 1918078845}
   - {fileID: 320971797}
   - {fileID: 1874742993}
+  - {fileID: 1835309467}

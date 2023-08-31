@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -59,6 +61,16 @@ public class UIController : MonoBehaviour
 
         // update the balance text
         UpdateBalance();
+    }
+
+    private void OnEnable()
+    {
+        EventManager.Instance.OnTransactionConfirmed += UpdateBalance;
+    }
+    
+    private void OnDisable()
+    {
+        EventManager.Instance.OnTransactionConfirmed -= UpdateBalance;
     }
 
     public void StartGame()
