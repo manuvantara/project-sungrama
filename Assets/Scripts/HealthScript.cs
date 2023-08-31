@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealthScript : MonoBehaviour
 {
     public float initialHP = 100f;
-    [SerializeField] private float currentHP = 100f;
+    public float currentHP = 100f;
 
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private HealthBar healthBarAux;
