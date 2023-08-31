@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     // static instance of the GameManager which allows it to be accessed by any other script
     public static GameManager instance = null;
+
+    public TextMeshProUGUI playerAddedCupsText;
+    public TextMeshProUGUI playerLostCupsText;
 
     public float energyRegenRate = 1f;
 
@@ -102,8 +106,23 @@ public class GameManager : MonoBehaviour
         // stop the game time
         Time.timeScale = 0;
 
-        // update the player's cups
-        dataScript.cups += 14;
+        // update the player's cups, add a random number between 25 and 35
+        int addedCups = Random.Range(25, 35);
+        dataScript.cups += addedCups;
+        // update the text
+        playerAddedCupsText.text = addedCups.ToString();
+
+        // add two random items to the player's inventory
+        int randomItem1 = Random.Range(0, dataScript.inventoryDropIds.Length);
+        
+        // add the item tag in the inventory list
+        dataScript.inventory.Add(dataScript.inventoryDropIds[randomItem1]);
+
+        randomItem1 = Random.Range(0, dataScript.inventoryDropIds.Length);
+        dataScript.inventory.Add(dataScript.inventoryDropIds[randomItem1]);
+
+        // save the data
+        dataScript.saveData();
     }
 
     public void EnemyWins()
@@ -113,11 +132,17 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
 
         // update the player's cups
-        dataScript.cups -= 14;
+        int lostCups = Random.Range(5, 15);
+        dataScript.cups -= lostCups;
         if (dataScript.cups < 0)
         {
             dataScript.cups = 0;
         }
+        // update the text
+        playerLostCupsText.text = lostCups.ToString();
+
+        // save the data
+        dataScript.saveData();
     }
 
     public void Draw()

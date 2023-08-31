@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class OpponentAI : MonoBehaviour
 {
     [SerializeField] private Vector2 spawnzoneMin;
     [SerializeField] private Vector2 spawnzoneMax;
 
+    public TextMeshProUGUI botName;
+    public TextMeshProUGUI botCups;
+
     public GameObject[] usedUnits;
 
     [SerializeField] private int maxEnergy = 10;
-    [SerializeField] private int currentEnergy = 10;
+    [SerializeField] private float currentEnergy = 10;
 
     [SerializeField] private float spawnCooldownTime = 3f;
 
@@ -19,9 +24,32 @@ public class OpponentAI : MonoBehaviour
     private float spawnCooldown = 0f;
     private float energyRegenCounter = 0f;
 
+    public BotSettings[] botSettings;
+    public BotSettings currentBot;
+
+    public DataScript dataScript;
+
     private void Start()
     {
         currentEnergy = maxEnergy;
+
+        // get the dataScript
+        dataScript = GameObject.Find("Data").GetComponent<DataScript>();
+
+        // select the correct bot settings
+        currentBot = botSettings[(dataScript.cups / 100) % botSettings.Length];        
+
+        // update the bot name and cups text
+        botName.text = currentBot.botName;
+        // update the bot cups to a random number between player cups - 100 and player cups + 100
+        botCups.text = Random.Range(dataScript.cups - 100, dataScript.cups + 100).ToString();
+
+        // get the enemy towers from the game manager and multiply their health by the towerHealthMultiplier
+        foreach (GameObject tower in GameManager.instance.enemyTowers)
+        {
+            tower.GetComponent<HealthScript>().initialHP *= currentBot.towerHealthMultiplier;
+            tower.GetComponent<HealthScript>().currentHP *= currentBot.towerHealthMultiplier;
+        }
     }
 
     private void Update()
@@ -41,7 +69,7 @@ public class OpponentAI : MonoBehaviour
         // regenerate energy
         if (energyRegenCounter >= 2f)
         {
-            currentEnergy += 1;
+            currentEnergy += 1 * currentBot.energyRecoveryMultiplier;
             if(currentEnergy > maxEnergy)
             {
                 currentEnergy = maxEnergy;
