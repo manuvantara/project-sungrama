@@ -37,8 +37,6 @@ namespace GameWallet.Managers
         {
             Time.timeScale = 1f;
             
-            WalletManager.Instance.DeleteWalletMnemonicJsonFile();
-            
             if (WalletManager.Instance.WalletMnemonicJsonFileExists())
             {
                 ShowUnlockScreen();
