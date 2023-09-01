@@ -5,6 +5,7 @@ public class Resource {
     public string name;
     public int id;
     public string image;
+    public int image_id;
 }
 
 [System.Serializable]

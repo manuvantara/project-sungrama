@@ -41,8 +41,8 @@ public class OpponentAI : MonoBehaviour
 
         // update the bot name and cups text
         botName.text = currentBot.botName;
-        // update the bot cups to a random number between player cups - 100 and player cups + 100
-        botCups.text = Random.Range(dataScript.cups - 100, dataScript.cups + 100).ToString();
+        // update the bot cups to a random number between player cups - 100 and player cups + 100 but not less than 0
+        botCups.text = Random.Range(Mathf.Max(0, dataScript.cups - 100), dataScript.cups + 100).ToString();
 
         // get the enemy towers from the game manager and multiply their health by the towerHealthMultiplier
         foreach (GameObject tower in GameManager.instance.enemyTowers)

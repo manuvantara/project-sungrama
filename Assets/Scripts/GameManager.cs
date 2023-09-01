@@ -33,8 +33,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        // get the DataScript
-        dataScript = GameObject.Find("Data").GetComponent<DataScript>();
 
         // check if instance already exists
         if (instance == null)
@@ -50,6 +48,9 @@ public class GameManager : MonoBehaviour
         }
         // sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
+        
+        // get the DataScript
+        dataScript = GameObject.Find("Data").GetComponent<DataScript>();
 
         instance.enemyTowers = enemyTowers;
         instance.playerTowers = playerTowers;
@@ -186,6 +187,6 @@ public class GameManager : MonoBehaviour
 
     public void DisplayItemsDropped(int item, int slotNumber) {
         // display the item in the UI
-        resourceImagesUI[slotNumber].sprite = resourceImages[item];
+        resourceImagesUI[slotNumber].sprite = dataScript.resourceImages[item];
     }
 }

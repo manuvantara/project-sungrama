@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class DataScript : MonoBehaviour
 {
+    public static DataScript instance = null;
+
     // account address
     private string accountAddress = "0x1TEST";
 
@@ -20,11 +22,28 @@ public class DataScript : MonoBehaviour
     // available resources to drop
     public ResourceList availableResources;
 
+    public Sprite[] resourceImages;
+
+    void Awake()
+    {
+        // check if instance already exists
+        if (instance == null)
+        {
+            // if not, set instance to this
+            instance = this;
+        }
+        // if instance already exists and it's not this:
+        else if (instance != this)
+        {
+            // then destroy this. this enforces our singleton pattern, meaning there can only ever be one instance of a GameManager
+            Destroy(gameObject);
+        }
+        // sets this to not be destroyed when reloading scene
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
     {
-        // dont destroy this object when loading a new scene
-        DontDestroyOnLoad(this.gameObject);
-
         // get the UIController script
         uiController = GameObject.Find("UI").GetComponent<UIController>();
 
