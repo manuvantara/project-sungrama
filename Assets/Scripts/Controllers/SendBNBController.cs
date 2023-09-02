@@ -1,6 +1,7 @@
 using System;
 using Game.Managers;
 using GameWallet.Managers;
+using Thirdweb;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,7 @@ namespace Game.Controllers
 {
     public class SendBNBController : MonoBehaviour
     {
+        [SerializeField] private PageSwitch m_pageSwitchScript;
         [SerializeField] private TMP_InputField m_recipientAddressInputField;
         [SerializeField] private TMP_InputField m_amountInputField;
         [SerializeField] private Toggle m_agreeToggle;
@@ -17,7 +19,9 @@ namespace Game.Controllers
         [SerializeField] private TMP_Text m_addressToTransferText;
         [SerializeField] private TMP_InputField m_passwordInputField;
         [SerializeField] private Button m_sendButton;
-        
+
+        private UIController m_UiController;
+
         private void OnEnable()
         {
             m_recipientAddressInputField.onValueChanged.AddListener(OnRecipientAddressInputFieldChanged);
@@ -27,6 +31,11 @@ namespace Game.Controllers
             m_passwordInputField.onEndEdit.AddListener(OnPasswordInputFieldEndEdit);
             m_sendButton.onClick.AddListener(OnSendButtonClicked);
             m_sendButton.interactable = false;
+        }
+
+        private void Start()
+        {
+            m_UiController = GameObject.Find("UI").GetComponent<UIController>();
         }
 
         private void OnDisable()
@@ -76,15 +85,31 @@ namespace Game.Controllers
 
         private async void OnSendButtonClicked()
         {
+            TransactionResult receipt;
+
+            m_UiController.ShowPending();
             EventManager.Instance.TransactionSent();
-            
-            var receipt = await ThirdwebManager.Instance.SDK.wallet.Transfer(
-                m_recipientAddressInputField.text,
-                m_amountInputField.text
-            );
-            
+
+            try
+            {
+                receipt = await ThirdwebManager.Instance.SDK.wallet.Transfer(
+                    m_recipientAddressInputField.text,
+                    m_amountInputField.text
+                );
+            }
+            catch (Exception e)
+            {
+                receipt = new TransactionResult();
+                
+                m_UiController.ShowFail();
+                m_pageSwitchScript.SwitchPage(0);
+                // EventManager.Instance.TransactionFailed();
+            }
+
+            m_UiController.ShowSuccess();
+            m_pageSwitchScript.SwitchPage(0);
             EventManager.Instance.TransactionConfirmed();
-            
+
             Debug.Log(receipt);
         }
     }

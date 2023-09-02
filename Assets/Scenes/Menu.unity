@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641222, b: 0.57481664, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5238,7 +5238,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 990697102952989188, guid: 2df9e85933bb619d3889ae81ea667132, type: 3}
       propertyPath: m_Name
-      value: Get Btn
+      value: Receive Button
       objectReference: {fileID: 0}
     - target: {fileID: 2825585420443641982, guid: 2df9e85933bb619d3889ae81ea667132, type: 3}
       propertyPath: m_Pivot.x
@@ -5350,7 +5350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6807095485676631732, guid: 2df9e85933bb619d3889ae81ea667132, type: 3}
       propertyPath: m_text
-      value: GET
+      value: RECEIVE
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14633,6 +14633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0873c91a60c547ec99c4c80db1012483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_pageSwitchScript: {fileID: 1506554392}
   m_recipientAddressInputField: {fileID: 1208901711}
   m_amountInputField: {fileID: 1729479285}
   m_agreeToggle: {fileID: 1314053188}
@@ -22390,7 +22391,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1958955990175954313, guid: 2de34c52953b66c819293bc7eeb6b74b, type: 3}
       propertyPath: m_Name
-      value: Send Btn
+      value: Send Button
       objectReference: {fileID: 0}
     - target: {fileID: 6770867998877651503, guid: 2de34c52953b66c819293bc7eeb6b74b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
