@@ -26,8 +26,8 @@ public class UIController : MonoBehaviour
     public TextMeshProUGUI armourText;
     public TextMeshProUGUI energyText;
 
-    public GameObject unit1;
-    public GameObject unit2;
+    public GameObject[] units;
+    public GameObject[] unitToggles;
 
     public GameObject popupSuccess;
     public GameObject popupPending;
@@ -49,8 +49,6 @@ public class UIController : MonoBehaviour
         damageSlider.maxValue = maxDamage;
         armourSlider.maxValue = maxArmour;
         energySlider.maxValue = maxEnergy;
-
-        SelectUnit1();
 
         // update the cups text
         cupsText.text = dataScript.cups.ToString();
@@ -91,26 +89,14 @@ public class UIController : MonoBehaviour
         levelUpPage.SetActive(true);
     }
 
-    public void SelectUnit1()
-    {
-        damageSlider.value = unit1.GetComponent<UnitAI>().attackDamage;
-        armourSlider.value = unit1.GetComponent<HealthScript>().initialHP;
-        energySlider.value = unit1.GetComponent<UnitAI>().energyRequired;
+    public void SelectUnit(int unit) {
+        damageSlider.value = units[unit].GetComponent<UnitAI>().attackDamage;
+        armourSlider.value = units[unit].GetComponent<HealthScript>().initialHP;
+        energySlider.value = units[unit].GetComponent<UnitAI>().energyRequired;
 
-        damageText.text = unit1.GetComponent<UnitAI>().attackDamage.ToString();
-        armourText.text = unit1.GetComponent<HealthScript>().initialHP.ToString();
-        energyText.text = unit1.GetComponent<UnitAI>().energyRequired.ToString();
-    }
-
-    public void SelectUnit2()
-    {
-        damageSlider.value = unit2.GetComponent<UnitAI>().attackDamage;
-        armourSlider.value = unit2.GetComponent<HealthScript>().initialHP;
-        energySlider.value = unit2.GetComponent<UnitAI>().energyRequired;
-
-        damageText.text = unit2.GetComponent<UnitAI>().attackDamage.ToString();
-        armourText.text = unit2.GetComponent<HealthScript>().initialHP.ToString();
-        energyText.text = unit2.GetComponent<UnitAI>().energyRequired.ToString();
+        damageText.text = units[unit].GetComponent<UnitAI>().attackDamage.ToString();
+        armourText.text = units[unit].GetComponent<HealthScript>().initialHP.ToString();
+        energyText.text = units[unit].GetComponent<UnitAI>().energyRequired.ToString();
     }
 
     public void ShowSuccess()
@@ -118,6 +104,8 @@ public class UIController : MonoBehaviour
         popupSuccess.SetActive(true);
         popupPending.SetActive(false);
         popupFail.SetActive(false);
+
+        HidePopup();
     }
 
     public void ShowPending()
@@ -125,6 +113,8 @@ public class UIController : MonoBehaviour
         popupSuccess.SetActive(false);
         popupPending.SetActive(true);
         popupFail.SetActive(false);
+
+        HidePopup();
     }
 
     public void ShowFail()
@@ -132,6 +122,8 @@ public class UIController : MonoBehaviour
         popupSuccess.SetActive(false);
         popupPending.SetActive(false);
         popupFail.SetActive(true);
+
+        HidePopup();
     }
 
     public async void UpdateBalance()
@@ -141,5 +133,14 @@ public class UIController : MonoBehaviour
         
         // display the balance capped to 2 decimal places
         balanceText.text = value.displayValue;
+    }
+
+    // timer for the popup
+    IEnumerator HidePopup()
+    {
+        yield return new WaitForSeconds(5);
+        popupSuccess.SetActive(false);
+        popupPending.SetActive(false);
+        popupFail.SetActive(false);
     }
 }

@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] enemyTowers;
     public GameObject[] playerTowers;
 
-    private int playerScore = 999; //
+    private int playerScore = 0;
     private int enemyScore = 0;
 
     // array of resource images

@@ -18,6 +18,12 @@ public class UnitPlacement : MonoBehaviour
 
     [SerializeField] private float maxSpawnZ = 0f;
 
+    [SerializeField] private GameObject[] unitToggles;
+
+    private int currentToggle = 0;
+    private bool[] displayedToggles = new bool[4]{true, true, false, false};
+    private int[] availableToggles = new int[4]{0, 1, 2, 3};
+
     // UI
     [SerializeField] private Toggle[] unitButtons;
     [SerializeField] private EnergyBar energyBar;
@@ -38,14 +44,6 @@ public class UnitPlacement : MonoBehaviour
 
     public void SelectTank()
     {
-        // skip if the toggle is deselected
-        if (!unitButtons[0].isOn)
-        {
-            return;
-        }
-
-        DeselectTogglesExcept(0);
-
         unitPrefab = unitPrefabs[0];
         // destroy the previous preview if it exists
         if (unitPrefabPreview != null)
@@ -58,18 +56,12 @@ public class UnitPlacement : MonoBehaviour
         
         unitPrefabPreview.transform.GetChild(1).gameObject.SetActive(true);
         unitPrefabPreview.transform.GetChild(0).gameObject.SetActive(false);
+
+        currentToggle = 0;
     }
 
     public void SelectArcher()
     {
-        // skip if the toggle is deselected
-        if (!unitButtons[1].isOn)
-        {
-            return;
-        }
-
-        DeselectTogglesExcept(1);
-
         unitPrefab = unitPrefabs[1];
         // destroy the previous preview if it exists
         if (unitPrefabPreview != null)
@@ -81,6 +73,73 @@ public class UnitPlacement : MonoBehaviour
         
         unitPrefabPreview.transform.GetChild(1).gameObject.SetActive(true);
         unitPrefabPreview.transform.GetChild(0).gameObject.SetActive(false);
+
+        currentToggle = 1;
+    }
+
+    public void SelectMaus()
+    {
+        unitPrefab = unitPrefabs[2];
+        // destroy the previous preview if it exists
+        if (unitPrefabPreview != null)
+        {
+            Destroy(unitPrefabPreview);
+        }
+        unitPrefabPreview = Instantiate(unitPrefabPreviews[2], Vector3.zero, Quaternion.identity);
+        unitPrefabPreview.layer = LayerMask.NameToLayer("Preview");
+
+        unitPrefabPreview.transform.GetChild(1).gameObject.SetActive(true);
+        unitPrefabPreview.transform.GetChild(0).gameObject.SetActive(false);
+
+        currentToggle = 2;
+    }
+
+    public void SelectKarlsson()
+    {
+        unitPrefab = unitPrefabs[3];
+        // destroy the previous preview if it exists
+        if (unitPrefabPreview != null)
+        {
+            Destroy(unitPrefabPreview);
+        }
+        unitPrefabPreview = Instantiate(unitPrefabPreviews[3], Vector3.zero, Quaternion.identity);
+        unitPrefabPreview.layer = LayerMask.NameToLayer("Preview");
+
+        unitPrefabPreview.transform.GetChild(1).gameObject.SetActive(true);
+        unitPrefabPreview.transform.GetChild(0).gameObject.SetActive(false);
+
+        currentToggle = 3;
+    }
+
+    // swaps the selected toggle with the random toggle from the ones that are not displayed
+    public void SwapToggle()
+    {
+        // if there are no available toggles, return
+        if (availableToggles.Length <= 2)
+        {
+            return;
+        }
+
+        // get a random toggle from the available toggles that is not displayed
+        int randomToggle = availableToggles[Random.Range(0, availableToggles.Length)];
+
+        // if the random toggle is already displayed, run the function again
+        if (displayedToggles[randomToggle])
+        {
+            SwapToggle();
+            return;
+        }
+
+        // disable the current toggle
+        unitToggles[currentToggle].SetActive(false);
+        displayedToggles[currentToggle] = false;
+
+        // enable the random toggle
+        unitToggles[randomToggle].SetActive(true);
+        displayedToggles[randomToggle] = true;
+
+        // make the position of the old toggle the position of the new toggle
+        unitToggles[randomToggle].transform.position = unitToggles[currentToggle].transform.position;
     }
 
     private void Update()
@@ -146,6 +205,9 @@ public class UnitPlacement : MonoBehaviour
 
                 // deselect the toggle
                 DeselectToggles();
+
+                // swap the toggle
+                SwapToggle();
             }
         }
 
