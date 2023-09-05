@@ -53,8 +53,7 @@ namespace GameWallet.UI.Controllers
                 
                 var connection = new WalletConnection(
                     WalletProvider.LocalHdWallet,
-                    chainId: ThirdwebManager.Instance.SDK.session.ChainId,
-                    password: password
+                    chainId: ThirdwebManager.Instance.SDK.session.ChainId
                 );
                 
                 await ThirdwebManager.Instance.SDK.wallet.Connect(

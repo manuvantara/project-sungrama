@@ -1,6 +1,7 @@
 using System.Numerics;
 using System.Threading.Tasks;
 using GameWallet.Managers;
+using NBitcoin;
 using Nethereum.Web3;
 using Nethereum.Web3.Accounts;
 
@@ -24,7 +25,7 @@ namespace Thirdweb.Wallets
         public Task<string> Connect(WalletConnection walletConnection, string rpc)
         {
             var mnemonic = WalletManager.Instance.Mnemonic;
-            _account = new Nethereum.HdWallet.Wallet(mnemonic, walletConnection.password).GetAccount(0);
+            _account = new Nethereum.HdWallet.Wallet(mnemonic, null).GetAccount(0);
             _web3 = new Web3(_account, rpc);
             return Task.FromResult(_account.Address);
         }
