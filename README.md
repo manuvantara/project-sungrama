@@ -14,6 +14,7 @@ To build the unity project:
 
 ## How to run project:
 To run the game:
-1. Install [https://drive.google.com/drive/u/0/folders/17kq23gTofkUIZaKN3fP9GxScEuu-yh0j](https://drive.google.com/file/d/1dBD3-W_M2yBL_7NnYodKtuhmVw9E4lvY/view) -  the folder with the executable file (the result of native build)
-2. Extract files
-3. Run the executable file Sungrama.exe
+1. Go to https://t.me/Sungrama
+2. Install Sungrama.zip
+3. Extract files
+4. Run the executable file Sungrama.exe
