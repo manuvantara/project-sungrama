@@ -5,20 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34646b02-8992-47cd-826d-cb850778d269" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game Data.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game Data/data.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameDataManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameDataManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.project-sungrama/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.project-sungrama/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EffectTexturesAndPrefabs/Materials/MuzzleFlash.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EffectTexturesAndPrefabs/Materials/MuzzleFlash.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Astron SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Astron SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Astron-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Astron-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Montserrat/static/Montserrat-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Montserrat/static/Montserrat-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Montserrat/static/Montserrat-SemiBold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Montserrat/static/Montserrat-SemiBold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Item.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Item.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/TokenItem.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/TokenItem.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Cursors/Default.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Cursors/Default.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Wallet.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Wallet.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/MainUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/MainUIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdweb/Core/Scripts/Contract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdweb/Core/Scripts/Contract.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdweb/Core/Scripts/ThirdwebInterceptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdweb/Core/Scripts/ThirdwebInterceptor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Thirdweb/Resources/all_chains.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Thirdweb/Resources/all_chains.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameDataManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameDataManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prefabs/TokenPrefab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prefabs/TokenPrefab.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
+    <list id="1e3c150a-a1e9-4da7-8808-736a07e84411" name="Correct commit grammar" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,12 +33,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Constants.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Contract Interactions/Core.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/ArenaController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/SettingsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/UnlockScreenController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/GameDataManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RenderInventory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prefabs/ArenaItemPrefab.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prefabs/LevelUpItemPrefab.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Types.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/11b82f0970ae4241910180e22ab84b6f172600/45/a3ce39de/SceneManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/11b82f0970ae4241910180e22ab84b6f172600/b2/74eb32a1/Color.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3a2f46faa62546ab81e40cb6c8c7351f5a800/4c/689ca775/DeployContract.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3a2f46faa62546ab81e40cb6c8c7351f5a800/62/395cb6b9/Function.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3a2f46faa62546ab81e40cb6c8c7351f5a800/65/6f26301b/FunctionBase.cs" root0="SKIP_HIGHLIGHTING" />
@@ -65,7 +80,8 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -78,7 +94,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$USER_HOME$/Desktop/sungrama.app/Contents/MacOS/Sungrama" />
+      <option name="EXE_PATH" value="$USER_HOME$/Desktop/test.app/Contents/MacOS/Sungrama" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="$USER_HOME$/Desktop/sungrama.app/Contents/MacOS" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -170,6 +186,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="34646b02-8992-47cd-826d-cb850778d269" name="Changes" comment="" />
+      <changelist id="1e3c150a-a1e9-4da7-8808-736a07e84411" name="Correct commit grammar" comment="" />
       <created>1692537541508</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -187,6 +204,9 @@
       <workItem from="1693083791168" duration="20343000" />
       <workItem from="1693233282496" duration="55000" />
       <workItem from="1693233372205" duration="13046000" />
+      <workItem from="1693612366952" duration="44175000" />
+      <workItem from="1693871762942" duration="4635000" />
+      <workItem from="1693876505214" duration="11308000" />
     </task>
     <servers />
   </component>
@@ -195,6 +215,17 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

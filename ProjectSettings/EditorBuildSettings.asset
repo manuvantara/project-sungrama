@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Wallet.unity
     guid: fe4bb105bdca54fdba69d7adff761f4d
   - enabled: 1
