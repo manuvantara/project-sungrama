@@ -20,7 +20,9 @@ namespace Thirdweb
     public class Wallet : Routable
     {
         public Wallet()
-            : base($"sdk{subSeparator}wallet") { }
+            : base($"sdk{subSeparator}wallet")
+        {
+        }
 
         /// <summary>
         /// Connects a user's wallet via a given wallet provider.
@@ -70,7 +72,8 @@ namespace Thirdweb
             }
             else
             {
-                var localAccount = ThirdwebManager.Instance.SDK.session.ActiveWallet.GetLocalAccount() ?? throw new Exception("No local account found");
+                var localAccount = ThirdwebManager.Instance.SDK.session.ActiveWallet.GetLocalAccount() ??
+                                   throw new Exception("No local account found");
                 return Utils.EncryptAndGenerateKeyStore(new EthECKey(localAccount.PrivateKey), password);
             }
         }
@@ -84,7 +87,8 @@ namespace Thirdweb
         {
             if (Utils.IsWebGLBuild())
             {
-                return await Bridge.InvokeRoute<LoginPayload>($"auth{subSeparator}login", Utils.ToJsonStringArray(domain));
+                return await Bridge.InvokeRoute<LoginPayload>($"auth{subSeparator}login",
+                    Utils.ToJsonStringArray(domain));
             }
             else
             {
@@ -207,7 +211,8 @@ namespace Thirdweb
         {
             if (Utils.IsWebGLBuild())
             {
-                return await Bridge.InvokeRoute<CurrencyValue>(getRoute("balance"), Utils.ToJsonStringArray(currencyAddress));
+                return await Bridge.InvokeRoute<CurrencyValue>(getRoute("balance"),
+                    Utils.ToJsonStringArray(currencyAddress));
             }
             else
             {
@@ -225,14 +230,18 @@ namespace Thirdweb
                     HexBigInteger balance;
                     try
                     {
-                        balance = await ThirdwebManager.Instance.SDK.session.Web3.Eth.GetBalance.SendRequestAsync(address);
+                        balance =
+                            await ThirdwebManager.Instance.SDK.session.Web3.Eth.GetBalance.SendRequestAsync(address);
                     }
                     catch
                     {
-                        balance = await new Web3(ThirdwebManager.Instance.SDK.session.RPC).Eth.GetBalance.SendRequestAsync(address);
+                        balance = await new Web3(ThirdwebManager.Instance.SDK.session.RPC).Eth.GetBalance
+                            .SendRequestAsync(address);
                     }
+
                     var nativeCurrency = ThirdwebManager.Instance.SDK.session.CurrentChainData.nativeCurrency;
-                    return new CurrencyValue(nativeCurrency.name, nativeCurrency.symbol, nativeCurrency.decimals.ToString(), balance.Value.ToString(), balance.Value.ToString().ToEth());
+                    return new CurrencyValue(nativeCurrency.name, nativeCurrency.symbol,
+                        nativeCurrency.decimals.ToString(), balance.Value.ToString(), balance.Value.ToString().ToEth());
                 }
             }
         }
@@ -346,7 +355,8 @@ namespace Thirdweb
         {
             if (Utils.IsWebGLBuild())
             {
-                return await Bridge.InvokeRoute<TransactionResult>(getRoute("transfer"), Utils.ToJsonStringArray(to, amount, currencyAddress));
+                return await Bridge.InvokeRoute<TransactionResult>(getRoute("transfer"),
+                    Utils.ToJsonStringArray(to, amount, currencyAddress));
             }
             else
             {
@@ -357,7 +367,8 @@ namespace Thirdweb
                 }
                 else
                 {
-                    var receipt = await ThirdwebManager.Instance.SDK.session.Web3.Eth.GetEtherTransferService().TransferEtherAndWaitForReceiptAsync(to, decimal.Parse(amount));
+                    var receipt = await ThirdwebManager.Instance.SDK.session.Web3.Eth.GetEtherTransferService()
+                        .TransferEtherAndWaitForReceiptAsync(to, decimal.Parse(amount));
                     return receipt.ToTransactionResult();
                 }
             }
@@ -389,7 +400,8 @@ namespace Thirdweb
                     }
                 }
 
-                return await ThirdwebManager.Instance.SDK.session.Request<string>("personal_sign", message, await GetSignerAddress());
+                return await ThirdwebManager.Instance.SDK.session.Request<string>("personal_sign", message,
+                    await GetSignerAddress());
             }
         }
 
@@ -442,7 +454,8 @@ namespace Thirdweb
                     property.Value = property.Value.ToString();
 
                 string safeJson = jsonObject.ToString();
-                return await ThirdwebManager.Instance.SDK.session.Request<string>("eth_signTypedData_v4", await GetSignerAddress(), safeJson);
+                return await ThirdwebManager.Instance.SDK.session.Request<string>("eth_signTypedData_v4",
+                    await GetSignerAddress(), safeJson);
             }
         }
 
@@ -456,7 +469,8 @@ namespace Thirdweb
         {
             if (Utils.IsWebGLBuild())
             {
-                return await Bridge.InvokeRoute<string>(getRoute("recoverAddress"), Utils.ToJsonStringArray(message, signature));
+                return await Bridge.InvokeRoute<string>(getRoute("recoverAddress"),
+                    Utils.ToJsonStringArray(message, signature));
             }
             else
             {
@@ -464,12 +478,15 @@ namespace Thirdweb
                 if (ThirdwebManager.Instance.SDK.session.ActiveWallet.GetProvider() == WalletProvider.SmartWallet)
                 {
                     var sw = ThirdwebManager.Instance.SDK.session.ActiveWallet as Wallets.ThirdwebSmartWallet;
-                    bool isSigValid = await sw.SmartWallet.VerifySignature(signer.HashPrefixedMessage(System.Text.Encoding.UTF8.GetBytes(message)), signature.HexStringToByteArray());
+                    bool isSigValid = await sw.SmartWallet.VerifySignature(
+                        signer.HashPrefixedMessage(System.Text.Encoding.UTF8.GetBytes(message)),
+                        signature.HexStringToByteArray());
                     if (isSigValid)
                     {
                         return await GetAddress();
                     }
                 }
+
                 var addressRecovered = signer.EncodeUTF8AndEcRecover(message, signature);
                 return addressRecovered;
             }
@@ -484,7 +501,8 @@ namespace Thirdweb
         {
             if (Utils.IsWebGLBuild())
             {
-                return await Bridge.InvokeRoute<TransactionResult>(getRoute("sendRawTransaction"), Utils.ToJsonStringArray(transactionRequest));
+                return await Bridge.InvokeRoute<TransactionResult>(getRoute("sendRawTransaction"),
+                    Utils.ToJsonStringArray(transactionRequest));
             }
             else
             {
@@ -496,7 +514,8 @@ namespace Thirdweb
                     new HexBigInteger(BigInteger.Parse(transactionRequest.gasPrice)),
                     new HexBigInteger(transactionRequest.value)
                 );
-                var receipt = await ThirdwebManager.Instance.SDK.session.Web3.Eth.TransactionManager.SendTransactionAndWaitForReceiptAsync(input);
+                var receipt = await ThirdwebManager.Instance.SDK.session.Web3.Eth.TransactionManager
+                    .SendTransactionAndWaitForReceiptAsync(input);
                 return receipt.ToTransactionResult();
             }
         }
@@ -528,7 +547,9 @@ namespace Thirdweb
         public WalletProvider provider;
 
         public BigInteger chainId;
-        
+
+        public string password;
+
         public string email;
 
         public WalletProvider personalWallet;
@@ -541,10 +562,12 @@ namespace Thirdweb
         /// <param name="password">The wallet password if using local wallets.</param>
         /// <param name="email">The email to login with if using email based providers.</param>
         /// <param name="personalWallet">The personal wallet provider if using smart wallets.</param>
-        public WalletConnection(WalletProvider provider, BigInteger chainId, string email = null, WalletProvider personalWallet = WalletProvider.LocalWallet)
+        public WalletConnection(WalletProvider provider, BigInteger chainId, string password = null,
+            string email = null, WalletProvider personalWallet = WalletProvider.LocalWallet)
         {
             this.provider = provider;
             this.chainId = chainId;
+            this.password = password;
             this.email = email;
             this.personalWallet = personalWallet;
         }
