@@ -80,19 +80,10 @@ namespace Game.ContractInteractions
                 amountsHex[i] = amounts[i].ToString("X");
             }
 
-            try
-            {
-                var result = await m_CollectionContract.Write("mintBatch",
-                    address, ids, amountsHex, m_BinaryData);
+            var result = await m_CollectionContract.Write("mintBatch",
+                address, ids, amountsHex, m_BinaryData);
 
-                return result.receipt;
-            }
-            catch (Exception e)
-            {
-                Debug.Log(e);
-            }
-
-            return new Receipt();
+            return result.receipt;
         }
 
         public static async Task<Receipt> Craft(string blueprintId)
