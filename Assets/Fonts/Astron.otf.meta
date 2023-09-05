@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 180c01f6378f14eb9b2a20e7f69da73c
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Astron
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f10bc9365ad9d6dbc8ea7fd77e98a89e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

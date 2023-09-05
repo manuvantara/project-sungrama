@@ -1,0 +1,27 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Button" src="project://database/Assets/UI%20Toolkit/Uxml/Button.uxml?fileID=9197481963319205126&amp;guid=622f04ff78e694485bb505ae376d32ff&amp;type=3#Button" />
+    <Style src="project://database/Assets/UI%20Toolkit/Uss/ImportScreen.uss?fileID=7433441132597879392&amp;guid=2b52bdf39b7d94562a70e6ab57c7b960&amp;type=3#ImportScreen" />
+    <Style src="project://database/Assets/UI%20Toolkit/Uss/Toggle.uss?fileID=7433441132597879392&amp;guid=c4f72836a312b4c70bb59d2fc62def3e&amp;type=3#Toggle" />
+    <ui:VisualElement name="import-layout" class="layout">
+        <ui:VisualElement name="import-wrapper" class="wrapper">
+            <ui:VisualElement name="import-container" class="container">
+                <ui:Label text="Import the wallet" display-tooltip-when-elided="true" name="import-title" class="title import-title" />
+                <ui:Label text="Import your existing wallet for easy asset management." display-tooltip-when-elided="true" name="import-subtitle" class="subtitle import-subtitle" />
+                <ui:VisualElement name="import-form-control" class="import-form-control" style="margin-top: 24px; margin-bottom: 24px;">
+                    <ui:Label text="Mnemonic" display-tooltip-when-elided="true" name="import-form-control__label" class="import-form-control__label" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 8px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; align-items: flex-start;" />
+                    <ui:TextField picking-mode="Ignore" name="import-form-control__input" class="input import-form-control__input" />
+                </ui:VisualElement>
+                <ui:VisualElement name="import-terms" style="margin-bottom: 24px;">
+                    <ui:Toggle label="I agree with Sungrama Terms &amp; Conditions and Privacy Policy to import my wallet" name="import-terms__toggle" class="toggle" style="flex-wrap: nowrap; max-width: 464px; width: 100%;" />
+                </ui:VisualElement>
+                <ui:Instance template="Button" name="import-button__template" class="import-button__template">
+                    <AttributeOverrides element-name="button" text="IMPORT WALLET" />
+                </ui:Instance>
+                <ui:VisualElement name="import-footer" class="import-footer">
+                    <ui:Label text="Do not have a wallet? " display-tooltip-when-elided="true" name="import-footer__label" class="import-footer__label" />
+                    <ui:Button text=" Create a new wallet" display-tooltip-when-elided="true" name="import-footer__link-button" class="import-footer__link" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

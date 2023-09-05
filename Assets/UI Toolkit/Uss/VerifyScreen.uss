@@ -1,0 +1,20 @@
+.verify__subtitle {
+    margin: 0;
+    padding: 0;
+}
+
+.verify__title {
+    margin: 0 0 16px;
+}
+
+.verify-word__input {
+    width: 100%;
+    margin: 0;
+    color: var(--white);
+}
+
+.verify-word__label {
+    color: var(--white);
+    margin: 0 0 8px;
+    padding: 0;
+}

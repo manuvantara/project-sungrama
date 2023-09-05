@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement class="layout">
+        <ui:VisualElement class="container" style="flex-grow: 1;">
+            <ui:Label text="Wallet" display-tooltip-when-elided="true" />
+            <ui:VisualElement name="output">
+                <ui:Label text="Address goes here" display-tooltip-when-elided="true" name="address" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

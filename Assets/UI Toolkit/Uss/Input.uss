@@ -1,0 +1,16 @@
+TextField.input {
+    font-size: 16px;
+    color: var(--white);
+    width: 222px;
+    height: 40px;
+    margin: 0 0 16px;
+    padding: 0 20px 0;
+    background-image: resource("Sprites/Input");
+}
+
+TextField.input .unity-base-text-field__input {
+    background-color: var(--transparent);
+    border-color: var(--transparent);
+    border-width: 0;
+    color: var(--white);
+}
