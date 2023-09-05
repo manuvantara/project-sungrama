@@ -1,9 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
+using Game.ContractInteractions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -33,7 +37,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-
         // check if instance already exists
         if (instance == null)
         {
@@ -46,9 +49,10 @@ public class GameManager : MonoBehaviour
             // then destroy this. this enforces our singleton pattern, meaning there can only ever be one instance of a GameManager
             Destroy(gameObject);
         }
+
         // sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
-        
+
         // get the DataScript
         dataScript = GameObject.Find("Data").GetComponent<DataScript>();
 
@@ -67,7 +71,9 @@ public class GameManager : MonoBehaviour
             {
                 PlayerWins();
             }
-        } else {
+        }
+        else
+        {
             enemyScore++;
             // if the tower is the main tower, enemy wins
             if (tower.tag == "MainTower")
@@ -138,6 +144,7 @@ public class GameManager : MonoBehaviour
         {
             dataScript.cups = 0;
         }
+
         // update the text
         playerLostCupsText.text = lostCups.ToString();
 
@@ -160,32 +167,61 @@ public class GameManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
     }
 
-    public void ItemsDrop(int number) {
+    public async void ItemsDrop(int number)
+    {
+        var resourcesToMint = new List<Resource>();
         // if the player has less then 300 cups
-        if (dataScript.cups < 300) {
+        if (dataScript.cups < 300)
+        {
             // give the player random items from the first 5 resources
-            for (int i = 0; i < number; i++) {
+            for (int i = 0; i < number; i++)
+            {
                 // get a random resource
                 int randomResource = Random.Range(0, 5);
                 // add the resource to the inventory
                 dataScript.inventory.Add(dataScript.availableResources.resources[randomResource]);
-
-                DisplayItemsDropped(randomResource, i);
-            }
-        } else {
-            // give the player random items from all of the resources
-            for (int i = 0; i < number; i++) {
-                // get a random resource
-                int randomResource = Random.Range(0, dataScript.availableResources.resources.Length);
-                // add the resource to the inventory
-                dataScript.inventory.Add(dataScript.availableResources.resources[randomResource]);
+                resourcesToMint.Add(dataScript.availableResources.resources[randomResource]);
 
                 DisplayItemsDropped(randomResource, i);
             }
         }
+        else
+        {
+            // give the player random items from all of the resources
+            for (int i = 0; i < number; i++)
+            {
+                // get a random resource
+                int randomResource = Random.Range(0, dataScript.availableResources.resources.Length);
+                // add the resource to the inventory
+                dataScript.inventory.Add(dataScript.availableResources.resources[randomResource]);
+                resourcesToMint.Add(dataScript.availableResources.resources[randomResource]);
+
+                DisplayItemsDropped(randomResource, i);
+            }
+        }
+
+        var ids = new List<BigInteger>();
+        var amounts = new List<BigInteger>();
+
+        foreach (var resource in resourcesToMint)
+        {
+            ids.Add(resource.id);
+            amounts.Add(1);
+        }
+
+        try
+        {
+            var receipt = await ContractInteraction.MintBatch(ids.ToArray(), amounts.ToArray());
+            Debug.Log(receipt);
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e);
+        }
     }
 
-    public void DisplayItemsDropped(int item, int slotNumber) {
+    public void DisplayItemsDropped(int item, int slotNumber)
+    {
         // display the item in the UI
         resourceImagesUI[slotNumber].sprite = dataScript.resourceImages[item];
     }
