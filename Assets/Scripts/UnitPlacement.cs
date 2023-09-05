@@ -198,13 +198,14 @@ public class UnitPlacement : MonoBehaviour
 
                 // deduct the energy cost of the unit
                 currentEnergy -= unitPrefab.GetComponent<UnitAI>().energyRequired;
+                
+                // deselect the toggle
+                DeselectToggles();
 
                 // deselect the unit and destroy the preview
                 Destroy(unitPrefabPreview);
                 unitPrefab = null;
-
-                // deselect the toggle
-                DeselectToggles();
+                unitPrefabPreview = null;
 
                 // swap the toggle
                 SwapToggle();
@@ -268,5 +269,18 @@ public class UnitPlacement : MonoBehaviour
     private bool IsMouseOverUI()
     {
         return UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+    }
+
+    // check if all the unit toggles are deselected
+    private bool AllTogglesDeselected()
+    {
+        for (int i = 0; i < unitButtons.Length; i++)
+        {
+            if (unitButtons[i].isOn)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
