@@ -13,9 +13,7 @@ public class DataScript : MonoBehaviour
     private string accountAddress = "0x1TEST";
 
     public int cups = 0;
-
-    private UIController uiController;
-
+    
     // inventory with resources
     public List<Resource> inventory = new List<Resource>();
 
@@ -44,9 +42,6 @@ public class DataScript : MonoBehaviour
 
     void Start()
     {
-        // get the UIController script
-        uiController = GameObject.Find("UI").GetComponent<UIController>();
-
         // load the available resources from the json file in Resources/Game Data folder
         string json = Resources.Load<TextAsset>("Game Data/data").text;
         availableResources = ResourceList.CreateFromJSON(json);
@@ -58,7 +53,7 @@ public class DataScript : MonoBehaviour
     public void CopyAddressInClipboard()
     {
         // show the pending popup
-        uiController.ShowPending();
+        UIController.ShowPending();
 
         TextEditor te = new TextEditor();
         te.text = accountAddress;
@@ -66,7 +61,7 @@ public class DataScript : MonoBehaviour
         te.Copy();
 
         // show the success popup
-        uiController.ShowSuccess();
+        UIController.ShowSuccess();
     }
 
     public async Task<string> GetAccountAddress()

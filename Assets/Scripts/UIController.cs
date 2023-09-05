@@ -1,11 +1,9 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using Game.Managers;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
@@ -30,14 +28,24 @@ public class UIController : MonoBehaviour
     public GameObject[] unitToggles;
 
     public GameObject popupSuccess;
+    private static GameObject _popupSuccess { get; set; }
     public GameObject popupPending;
+    private static GameObject _popupPending { get; set; }
     public GameObject popupFail;
+    private static GameObject _popupFail { get; set; }
 
     public TextMeshProUGUI accountAddressText;
 
     public TextMeshProUGUI cupsText;
 
     public TextMeshProUGUI balanceText;
+
+    private void Awake()
+    {
+        _popupSuccess = popupSuccess;
+        _popupPending = popupPending;
+        _popupFail = popupFail;
+    }
 
     private async void Start()
     {
@@ -55,7 +63,8 @@ public class UIController : MonoBehaviour
 
         // update the account address text in a format 0x12...56
         string accountAddress = await dataScript.GetAccountAddress();
-        accountAddressText.text = accountAddress.Substring(0, 4) + "..." + accountAddress.Substring(accountAddress.Length - 4);
+        accountAddressText.text =
+            accountAddress.Substring(0, 4) + "..." + accountAddress.Substring(accountAddress.Length - 4);
 
         // update the balance text
         UpdateBalance();
@@ -63,18 +72,18 @@ public class UIController : MonoBehaviour
 
     private void OnEnable()
     {
-        EventManager.Instance.OnTransactionConfirmed += UpdateBalance;
+        EventManager.OnTransactionConfirmed += UpdateBalance;
     }
-    
+
     private void OnDisable()
     {
-        EventManager.Instance.OnTransactionConfirmed -= UpdateBalance;
+        EventManager.OnTransactionConfirmed -= UpdateBalance;
     }
 
     public void StartGame()
     {
         // load the Main Scene
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("MainScene");
     }
 
     public void ShowStats()
@@ -89,7 +98,8 @@ public class UIController : MonoBehaviour
         levelUpPage.SetActive(true);
     }
 
-    public void SelectUnit(int unit) {
+    public void SelectUnit(int unit)
+    {
         damageSlider.value = units[unit].GetComponent<UnitAI>().attackDamage;
         armourSlider.value = units[unit].GetComponent<HealthScript>().initialHP;
         energySlider.value = units[unit].GetComponent<UnitAI>().energyRequired;
@@ -99,29 +109,29 @@ public class UIController : MonoBehaviour
         energyText.text = units[unit].GetComponent<UnitAI>().energyRequired.ToString();
     }
 
-    public void ShowSuccess()
+    public static void ShowSuccess()
     {
-        popupSuccess.SetActive(true);
-        popupPending.SetActive(false);
-        popupFail.SetActive(false);
+        _popupSuccess.SetActive(true);
+        _popupPending.SetActive(false);
+        _popupFail.SetActive(false);
 
         HidePopup();
     }
 
-    public void ShowPending()
+    public static void ShowPending()
     {
-        popupSuccess.SetActive(false);
-        popupPending.SetActive(true);
-        popupFail.SetActive(false);
+        _popupSuccess.SetActive(false);
+        _popupPending.SetActive(true);
+        _popupFail.SetActive(false);
 
         HidePopup();
     }
 
-    public void ShowFail()
+    public static void ShowFail()
     {
-        popupSuccess.SetActive(false);
-        popupPending.SetActive(false);
-        popupFail.SetActive(true);
+        _popupSuccess.SetActive(false);
+        _popupPending.SetActive(false);
+        _popupFail.SetActive(true);
 
         HidePopup();
     }
@@ -130,17 +140,18 @@ public class UIController : MonoBehaviour
     {
         // get the balance from the SDK
         var value = await ThirdwebManager.Instance.SDK.wallet.GetBalance();
-        
+
         // display the balance capped to 2 decimal places
         balanceText.text = value.displayValue;
     }
 
     // timer for the popup
-    IEnumerator HidePopup()
+    // Won't work in static context, but there's no time to fix it
+    static IEnumerator HidePopup()
     {
         yield return new WaitForSeconds(5);
-        popupSuccess.SetActive(false);
-        popupPending.SetActive(false);
-        popupFail.SetActive(false);
+        _popupSuccess.SetActive(false);
+        _popupPending.SetActive(false);
+        _popupFail.SetActive(false);
     }
 }

@@ -3,128 +3,265 @@
     {
       "name": "Shards",
       "id": "1001",
-      "image": "https://fastly.picsum.photos/id/618/640/360.jpg?hmac=lFNiTm7GVVkgNOF7JV2QlMnficVjztnc6Nn-KOvI7Nk",
+      "image": "Sprites/Resources/Shards",
       "image_id": 0
     },
     {
       "name": "Gears",
       "id": "1002",
-      "image": "https://fastly.picsum.photos/id/618/640/360.jpg?hmac=lFNiTm7GVVkgNOF7JV2QlMnficVjztnc6Nn-KOvI7Nk",
+      "image": "Sprites/Resources/Gears",
       "image_id": 1
     },
     {
       "name": "Crystals",
       "id": "1003",
-      "image": "https://fastly.picsum.photos/id/618/640/360.jpg?hmac=lFNiTm7GVVkgNOF7JV2QlMnficVjztnc6Nn-KOvI7Nk",
+      "image": "Sprites/Resources/Crystals",
       "image_id": 2
     },
     {
       "name": "Prism",
       "id": "1004",
-      "image": "https://fastly.picsum.photos/id/618/640/360.jpg?hmac=lFNiTm7GVVkgNOF7JV2QlMnficVjztnc6Nn-KOvI7Nk",
+      "image": "Sprites/Resources/Prism",
       "image_id": 3
     },
     {
       "name": "Essence",
       "id": "1005",
-      "image": "https://fastly.picsum.photos/id/618/640/360.jpg?hmac=lFNiTm7GVVkgNOF7JV2QlMnficVjztnc6Nn-KOvI7Nk",
+      "image": "Sprites/Resources/Essence",
       "image_id": 4
     },
     {
-      "name": "Sparks",
+      "name": "Scanner",
       "id": "1006",
-      "image": "https://fastly.picsum.photos/id/618/640/360.jpg?hmac=lFNiTm7GVVkgNOF7JV2QlMnficVjztnc6Nn-KOvI7Nk",
+      "image": "Sprites/Resources/Scanner",
       "image_id": 5
     },
     {
-      "name": "Cores",
+      "name": "Matrix",
       "id": "1007",
-      "image": "https://fastly.picsum.photos/id/618/640/360.jpg?hmac=lFNiTm7GVVkgNOF7JV2QlMnficVjztnc6Nn-KOvI7Nk",
+      "image": "Sprites/Resources/Matrix",
       "image_id": 6
     },
     {
-      "name": "Plates",
+      "name": "Batteries",
       "id": "1008",
-      "image": "https://fastly.picsum.photos/id/618/640/360.jpg?hmac=lFNiTm7GVVkgNOF7JV2QlMnficVjztnc6Nn-KOvI7Nk",
+      "image": "Sprites/Resources/Batteries",
       "image_id": 7
     },
     {
-      "name": "Dust",
+      "name": "Amplifier",
       "id": "1009",
-      "image": "https://fastly.picsum.photos/id/618/640/360.jpg?hmac=lFNiTm7GVVkgNOF7JV2QlMnficVjztnc6Nn-KOvI7Nk",
+      "image": "Sprites/Resources/Amplifier",
       "image_id": 8
     },
     {
-      "name": "Runes",
+      "name": "Communicator",
       "id": "1010",
-      "image": "https://fastly.picsum.photos/id/618/640/360.jpg?hmac=lFNiTm7GVVkgNOF7JV2QlMnficVjztnc6Nn-KOvI7Nk",
+      "image": "Sprites/Resources/Communicator",
       "image_id": 9
     }
   ],
-  "cards": {
-    "chainsaw": [
+  "drones": {
+    "maus": [
       {
-        "name": "Chainsaw",
+        "name": "Maus",
         "level": 1,
-        "id": "1",
-        "image": "https://fastly.picsum.photos/id/396/640/360.jpg?hmac=hFn6wearGVbuDKF22-6nfvLWQ2jmhgFmdHOKItwwzh4",
-        "image_id": 10
+        "id": "4",
+        "image": "Sprites/Drones/Maus",
+        "hitpoints": 130,
+        "damage": 60,
+        "reload": "5s",
+        "distance": 4,
+        "speed": 0.8
       },
       {
-        "name": "Chainsaw",
+        "name": "Maus",
         "level": 2,
-        "id": "11",
-        "image": "https://fastly.picsum.photos/id/396/640/360.jpg?hmac=hFn6wearGVbuDKF22-6nfvLWQ2jmhgFmdHOKItwwzh4",
-        "image_id": 10
+        "id": "44",
+        "image": "Sprites/Drones/Maus",
+        "hitpoints": 143,
+        "damage": 66,
+        "reload": "4.8s",
+        "distance": 4.1,
+        "speed": 0.82
       },
       {
-        "name": "Chainsaw",
+        "name": "Maus",
         "level": 3,
-        "id": "111",
-        "image": "https://fastly.picsum.photos/id/396/640/360.jpg?hmac=hFn6wearGVbuDKF22-6nfvLWQ2jmhgFmdHOKItwwzh4",
-        "image_id": 10
+        "id": "444",
+        "image": "Sprites/Drones/Maus",
+        "hitpoints": 157,
+        "damage": 73,
+        "reload": "4.6s",
+        "distance": 4.2,
+        "speed": 0.84
       },
       {
-        "name": "Chainsaw",
+        "name": "Maus",
         "level": 4,
-        "id": "1111",
-        "image": "https://fastly.picsum.photos/id/396/640/360.jpg?hmac=hFn6wearGVbuDKF22-6nfvLWQ2jmhgFmdHOKItwwzh4",
-        "image_id": 10
+        "id": "4444",
+        "image": "Sprites/Drones/Maus",
+        "hitpoints": 173,
+        "damage": 80,
+        "reload": "4.4s",
+        "distance": 4.3,
+        "speed": 0.86
       },
       {
-        "name": "Chainsaw",
+        "name": "Maus",
         "level": 5,
-        "id": "11111",
-        "image": "https://fastly.picsum.photos/id/396/640/360.jpg?hmac=hFn6wearGVbuDKF22-6nfvLWQ2jmhgFmdHOKItwwzh4",
-        "image_id": 10
+        "id": "44444",
+        "image": "Sprites/Drones/Maus",
+        "hitpoints": 190,
+        "damage": 88,
+        "reload": "4.2s",
+        "distance": 4.4,
+        "speed": 0.88
       },
       {
-        "name": "Chainsaw",
+        "name": "Maus",
         "level": 6,
-        "id": "111111",
-        "image": "https://fastly.picsum.photos/id/396/640/360.jpg?hmac=hFn6wearGVbuDKF22-6nfvLWQ2jmhgFmdHOKItwwzh4",
-        "image_id": 10
+        "id": "444444",
+        "image": "Sprites/Drones/Maus",
+        "hitpoints": 209,
+        "damage": 97,
+        "reload": "4s",
+        "distance": 4.5,
+        "speed": 0.9
       },
       {
-        "name": "Chainsaw",
+        "name": "Maus",
         "level": 7,
-        "id": "1111111",
-        "image": "https://fastly.picsum.photos/id/396/640/360.jpg?hmac=hFn6wearGVbuDKF22-6nfvLWQ2jmhgFmdHOKItwwzh4",
-        "image_id": 10
+        "id": "4444444",
+        "image": "Sprites/Drones/Maus",
+        "hitpoints": 230,
+        "damage": 107,
+        "reload": "3.8s",
+        "distance": 4.6,
+        "speed": 0.92
       },
       {
-        "name": "Chainsaw",
+        "name": "Maus",
         "level": 8,
-        "id": "11111111",
-        "image": "https://fastly.picsum.photos/id/396/640/360.jpg?hmac=hFn6wearGVbuDKF22-6nfvLWQ2jmhgFmdHOKItwwzh4",
-        "image_id": 10
+        "id": "44444444",
+        "image": "Sprites/Drones/Maus",
+        "hitpoints": 253,
+        "damage": 118,
+        "reload": "3.6s",
+        "distance": 4.7,
+        "speed": 0.94
       },
       {
-        "name": "Chainsaw",
+        "name": "Maus",
         "level": 9,
-        "id": "111111111",
-        "image": "https://fastly.picsum.photos/id/396/640/360.jpg?hmac=hFn6wearGVbuDKF22-6nfvLWQ2jmhgFmdHOKItwwzh4",
-        "image_id": 10
+        "id": "444444444",
+        "image": "Sprites/Drones/Maus",
+        "hitpoints": 278,
+        "damage": 130,
+        "reload": "3.4s",
+        "distance": 4.8,
+        "speed": 0.96
+      }
+    ],
+    "carlson": [
+      {
+        "name": "Carlson",
+        "level": 1,
+        "id": "3",
+        "image": "Sprites/Drones/Carlson",
+        "hitpoints": 50,
+        "damage": 18,
+        "reload": "1.5s",
+        "distance": 4.5,
+        "speed": 3.5
+      },
+      {
+        "name": "Carlson",
+        "level": 2,
+        "id": "33",
+        "image": "Sprites/Drones/Carlson",
+        "hitpoints": 55,
+        "damage": 19.8,
+        "reload": "1.45s",
+        "distance": 4.55,
+        "speed": 3.6
+      },
+      {
+        "name": "Carlson",
+        "level": 3,
+        "id": "333",
+        "image": "Sprites/Drones/Carlson",
+        "hitpoints": 60.5,
+        "damage": 21.8,
+        "reload": "1.4s",
+        "distance": 4.6,
+        "speed": 3.7
+      },
+      {
+        "name": "Carlson",
+        "level": 4,
+        "id": "3333",
+        "image": "Sprites/Drones/Carlson",
+        "hitpoints": 66.5,
+        "damage": 24,
+        "reload": "1.35s",
+        "distance": 4.65,
+        "speed": 3.8
+      },
+      {
+        "name": "Carlson",
+        "level": 5,
+        "id": "33333",
+        "image": "Sprites/Drones/Carlson",
+        "hitpoints": 73,
+        "damage": 26.4,
+        "reload": "1.3s",
+        "distance": 4.7,
+        "speed": 3.9
+      },
+      {
+        "name": "Carlson",
+        "level": 6,
+        "id": "333333",
+        "image": "Sprites/Drones/Carlson",
+        "hitpoints": 80.3,
+        "damage": 29.04,
+        "reload": "1.25s",
+        "distance": 4.75,
+        "speed": 4
+      },
+      {
+        "name": "Carlson",
+        "level": 7,
+        "id": "3333333",
+        "image": "Sprites/Drones/Carlson",
+        "hitpoints": 88.3,
+        "damage": 31.94,
+        "reload": "1.2s",
+        "distance": 4.8,
+        "speed": 4.1
+      },
+      {
+        "name": "Carlson",
+        "level": 8,
+        "id": "33333333",
+        "image": "Sprites/Drones/Carlson",
+        "hitpoints": 97.1,
+        "damage": 35.13,
+        "reload": "1.15s",
+        "distance": 4.85,
+        "speed": 4.2
+      },
+      {
+        "name": "Carlson",
+        "level": 9,
+        "id": "333333333",
+        "image": "Sprites/Drones/Carlson",
+        "hitpoints": 106.8,
+        "damage": 38.64,
+        "reload": "1.1s",
+        "distance": 4.9,
+        "speed": 4.3
       }
     ],
     "rooster": [
@@ -132,64 +269,277 @@
         "name": "Rooster",
         "level": 1,
         "id": "2",
-        "image": "https://fastly.picsum.photos/id/12/640/360.jpg?hmac=wFykTWGEoBeljsOW9g3okzsS3Hq-pf02nC9ge3UZmR4",
-        "image_id": 11
+        "image": "Sprites/Drones/Rooster",
+        "hitpoints": 30,
+        "damage": 7,
+        "reload": "0.75s",
+        "distance": 5.2,
+        "speed": 5
       },
       {
         "name": "Rooster",
         "level": 2,
         "id": "22",
-        "image": "https://fastly.picsum.photos/id/12/640/360.jpg?hmac=wFykTWGEoBeljsOW9g3okzsS3Hq-pf02nC9ge3UZmR4",
-        "image_id": 11
+        "image": "Sprites/Drones/Rooster",
+        "hitpoints": 33,
+        "damage": 7.7,
+        "reload": "0.725s",
+        "distance": 5.26,
+        "speed": 5.1
       },
       {
         "name": "Rooster",
         "level": 3,
         "id": "222",
-        "image": "https://fastly.picsum.photos/id/12/640/360.jpg?hmac=wFykTWGEoBeljsOW9g3okzsS3Hq-pf02nC9ge3UZmR4",
-        "image_id": 11
+        "image": "Sprites/Drones/Rooster",
+        "hitpoints": 36.3,
+        "damage": 8.47,
+        "reload": "0.7s",
+        "distance": 5.32,
+        "speed": 5.2
       },
       {
         "name": "Rooster",
         "level": 4,
         "id": "2222",
-        "image": "https://fastly.picsum.photos/id/12/640/360.jpg?hmac=wFykTWGEoBeljsOW9g3okzsS3Hq-pf02nC9ge3UZmR4",
-        "image_id": 11
+        "image": "Sprites/Drones/Rooster",
+        "hitpoints": 39.9,
+        "damage": 9.32,
+        "reload": "0.675s",
+        "distance": 5.38,
+        "speed": 5.3
       },
       {
         "name": "Rooster",
         "level": 5,
         "id": "22222",
-        "image": "https://fastly.picsum.photos/id/12/640/360.jpg?hmac=wFykTWGEoBeljsOW9g3okzsS3Hq-pf02nC9ge3UZmR4",
-        "image_id": 11
+        "image": "Sprites/Drones/Rooster",
+        "hitpoints": 43.9,
+        "damage": 10.25,
+        "reload": "0.65s",
+        "distance": 5.44,
+        "speed": 5.4
       },
       {
         "name": "Rooster",
         "level": 6,
         "id": "222222",
-        "image": "https://fastly.picsum.photos/id/12/640/360.jpg?hmac=wFykTWGEoBeljsOW9g3okzsS3Hq-pf02nC9ge3UZmR4",
-        "image_id": 11
+        "image": "Sprites/Drones/Rooster",
+        "hitpoints": 48.3,
+        "damage": 11.27,
+        "reload": "0.625s",
+        "distance": 5.5,
+        "speed": 5.5
       },
       {
         "name": "Rooster",
         "level": 7,
         "id": "2222222",
-        "image": "https://fastly.picsum.photos/id/12/640/360.jpg?hmac=wFykTWGEoBeljsOW9g3okzsS3Hq-pf02nC9ge3UZmR4",
-        "image_id": 11
+        "image": "Sprites/Drones/Rooster",
+        "hitpoints": 53.1,
+        "damage": 12.39,
+        "reload": "0.6s",
+        "distance": 5.56,
+        "speed": 5.6
       },
       {
         "name": "Rooster",
         "level": 8,
         "id": "22222222",
-        "image": "https://fastly.picsum.photos/id/12/640/360.jpg?hmac=wFykTWGEoBeljsOW9g3okzsS3Hq-pf02nC9ge3UZmR4",
-        "image_id": 11
+        "image": "Sprites/Drones/Rooster",
+        "hitpoints": 58.4,
+        "damage": 13.63,
+        "reload": "0.575s",
+        "distance": 5.62,
+        "speed": 5.7
       },
       {
         "name": "Rooster",
         "level": 9,
         "id": "222222222",
-        "image": "https://fastly.picsum.photos/id/12/640/360.jpg?hmac=wFykTWGEoBeljsOW9g3okzsS3Hq-pf02nC9ge3UZmR4",
-        "image_id": 11
+        "image": "Sprites/Drones/Rooster",
+        "hitpoints": 64.2,
+        "damage": 14.99,
+        "reload": "0.55s",
+        "distance": 5.68,
+        "speed": 5.8
+      }
+    ],
+    "chainsaw": [
+      {
+        "name": "Chainsaw",
+        "level": 1,
+        "id": "1",
+        "image": "Sprites/Drones/Chainsaw",
+        "hitpoints": 60,
+        "damage": 25,
+        "reload": "1.25s",
+        "distance": 2.5,
+        "speed": 2
+      },
+      {
+        "name": "Chainsaw",
+        "level": 2,
+        "id": "11",
+        "image": "Sprites/Drones/Chainsaw",
+        "hitpoints": 66,
+        "damage": 27.5,
+        "reload": "1.225s",
+        "distance": 2.53,
+        "speed": 2.02
+      },
+      {
+        "name": "Chainsaw",
+        "level": 3,
+        "id": "111",
+        "image": "Sprites/Drones/Chainsaw",
+        "hitpoints": 72.6,
+        "damage": 30.25,
+        "reload": "1.2s",
+        "distance": 2.56,
+        "speed": 2.04
+      },
+      {
+        "name": "Chainsaw",
+        "level": 4,
+        "id": "1111",
+        "image": "Sprites/Drones/Chainsaw",
+        "hitpoints": 79.9,
+        "damage": 33.3,
+        "reload": "1.175s",
+        "distance": 2.59,
+        "speed": 2.06
+      },
+      {
+        "name": "Chainsaw",
+        "level": 5,
+        "id": "11111",
+        "image": "Sprites/Drones/Chainsaw",
+        "hitpoints": 87.8,
+        "damage": 36.6,
+        "reload": "1.15s",
+        "distance": 2.62,
+        "speed": 2.08
+      },
+      {
+        "name": "Chainsaw",
+        "level": 6,
+        "id": "111111",
+        "image": "Sprites/Drones/Chainsaw",
+        "hitpoints": 96.5,
+        "damage": 40.25,
+        "reload": "1.125s",
+        "distance": 2.65,
+        "speed": 2.1
+      },
+      {
+        "name": "Chainsaw",
+        "level": 7,
+        "id": "1111111",
+        "image": "Sprites/Drones/Chainsaw",
+        "hitpoints": 106.1,
+        "damage": 44.3,
+        "reload": "1.1s",
+        "distance": 2.68,
+        "speed": 2.12
+      },
+      {
+        "name": "Chainsaw",
+        "level": 8,
+        "id": "11111111",
+        "image": "Sprites/Drones/Chainsaw",
+        "hitpoints": 116.7,
+        "damage": 48.7,
+        "reload": "1.075s",
+        "distance": 2.71,
+        "speed": 2.14
+      },
+      {
+        "name": "Chainsaw",
+        "level": 9,
+        "id": "111111111",
+        "image": "Sprites/Drones/Chainsaw",
+        "hitpoints": 128.4,
+        "damage": 53.6,
+        "reload": "1.05s",
+        "distance": 2.74,
+        "speed": 2.16
+      }
+    ]
+  },
+  "towers": {
+    "sideTower": [
+      {
+        "name": "Side Tower",
+        "level": 1,
+        "hitpoints": 150
+      },
+      {
+        "name": "Side Tower",
+        "level": 2,
+        "hitpoints": 165
+      },
+      {
+        "name": "Side Tower",
+        "level": 3,
+        "hitpoints": 180
+      },
+      {
+        "name": "Side Tower",
+        "level": 4,
+        "hitpoints": 195
+      },
+      {
+        "name": "Side Tower",
+        "level": 5,
+        "hitpoints": 212
+      },
+      {
+        "name": "Side Tower",
+        "level": 6,
+        "hitpoints": 233
+      },
+      {
+        "name": "Side Tower",
+        "level": 7,
+        "hitpoints": 256
+      }
+    ],
+    "centralTower": [
+      {
+        "name": "Central Tower",
+        "level": 1,
+        "hitpoints": 300
+      },
+      {
+        "name": "Central Tower",
+        "level": 2,
+        "hitpoints": 330
+      },
+      {
+        "name": "Central Tower",
+        "level": 3,
+        "hitpoints": 363
+      },
+      {
+        "name": "Central Tower",
+        "level": 4,
+        "hitpoints": 399
+      },
+      {
+        "name": "Central Tower",
+        "level": 5,
+        "hitpoints": 439
+      },
+      {
+        "name": "Central Tower",
+        "level": 6,
+        "hitpoints": 482
+      },
+      {
+        "name": "Central Tower",
+        "level": 7,
+        "hitpoints": 530
       }
     ]
   }

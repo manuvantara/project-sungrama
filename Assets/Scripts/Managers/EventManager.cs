@@ -3,13 +3,15 @@ using UnityEngine;
 
 namespace Game.Managers
 {
-    public class EventManager: MonoBehaviour
+    public class EventManager : MonoBehaviour
     {
-        public event Action OnTransactionSent;
-        public event Action OnTransactionConfirmed;
-        
+        public static event Action OnTransactionSent;
+        public static event Action OnTransactionConfirmed;
+        public static event Action OnMarketplaceItemBought;
+        public static event Action<string> OnRevealMnemonicClicked;
+
         public static EventManager Instance { get; private set; }
-        
+
         private void Awake()
         {
             if (Instance == null)
@@ -24,15 +26,25 @@ namespace Game.Managers
                 return;
             }
         }
-        
-        public void TransactionSent()
+
+        public static void TransactionSent()
         {
             OnTransactionSent?.Invoke();
         }
-        
-        public void TransactionConfirmed()
+
+        public static void TransactionConfirmed()
         {
             OnTransactionConfirmed?.Invoke();
+        }
+
+        public static void MarketplaceItemBought()
+        {
+            OnMarketplaceItemBought?.Invoke();
+        }
+        
+        public static void RevealMnemonicClicked(string password)
+        {
+            OnRevealMnemonicClicked?.Invoke(password);
         }
     }
 }
