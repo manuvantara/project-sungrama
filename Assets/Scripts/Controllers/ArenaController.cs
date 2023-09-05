@@ -57,25 +57,16 @@ namespace Game.Controllers
                 Destroy(this.gameObject);
                 return;
             }
-        }
-
-        private void OnEnable()
-        {
+            
             GameDataManager.OnGetAccountTokensFinished += OnGetAccountTokensFinished;
             GameDataManager.OnLevelUpDrone += OnLevelUpDrone;
-        }
-
-        private void OnDisable()
-        {
-            GameDataManager.OnGetAccountTokensFinished -= OnGetAccountTokensFinished;
-            GameDataManager.OnLevelUpDrone -= OnLevelUpDrone;
         }
 
         private void OnGetAccountTokensFinished()
         {
             m_AccountDrones = GameDataManager.Instance.GetDronesWithHighestLevel();
-
-            if (m_AccountDrones.Count == 0)
+            
+            if (m_AccountDrones == null || m_AccountDrones.Count == 0)
             {
                 m_EmptyAccountPanel.gameObject.SetActive(true);
                 // m_ContentParent.gameObject.SetActive(false);
