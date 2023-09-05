@@ -6009,6 +6009,8 @@ MonoBehaviour:
   unitButtons:
   - {fileID: 1020197822}
   - {fileID: 1586773011}
+  - {fileID: 2099749331}
+  - {fileID: 1317780621}
   energyBar: {fileID: 753439701}
   maxEnergy: 10
   energyRegenRate: 2
