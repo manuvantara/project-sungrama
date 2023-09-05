@@ -528,9 +528,7 @@ namespace Thirdweb
         public WalletProvider provider;
 
         public BigInteger chainId;
-
-        public string password;
-
+        
         public string email;
 
         public WalletProvider personalWallet;
@@ -543,11 +541,10 @@ namespace Thirdweb
         /// <param name="password">The wallet password if using local wallets.</param>
         /// <param name="email">The email to login with if using email based providers.</param>
         /// <param name="personalWallet">The personal wallet provider if using smart wallets.</param>
-        public WalletConnection(WalletProvider provider, BigInteger chainId, string password = null, string email = null, WalletProvider personalWallet = WalletProvider.LocalWallet)
+        public WalletConnection(WalletProvider provider, BigInteger chainId, string email = null, WalletProvider personalWallet = WalletProvider.LocalWallet)
         {
             this.provider = provider;
             this.chainId = chainId;
-            this.password = password;
             this.email = email;
             this.personalWallet = personalWallet;
         }
