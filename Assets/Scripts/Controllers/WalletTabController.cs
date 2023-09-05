@@ -20,7 +20,7 @@ namespace Game.Controllers
         [SerializeField] private TMP_Text m_AddressToTransferText;
         [SerializeField] private TMP_InputField m_PasswordInputField;
         [SerializeField] private Button m_SendButton;
-        
+
         private void OnEnable()
         {
             EventManager.OnTransactionConfirmed += OnTransactionConfirmed;
@@ -124,6 +124,11 @@ namespace Game.Controllers
             }
 
             Debug.Log(receipt);
+        }
+
+        public async void CopyAddressToClipboard()
+        {
+            GUIUtility.systemCopyBuffer = await ThirdwebManager.Instance.SDK.wallet.GetAddress();
         }
     }
 }
